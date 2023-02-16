@@ -11,12 +11,12 @@ namespace ParcelaService.DTOs
     public class DeoParceleDto
     {
         /// <summary>
-        /// Id dela parcele.
-        /// </summary>
+     /// Id dela parcele.
+     /// </summary>
         public Guid DeoParceleId { get; set; }
 
         /// <summary>
-        /// Id parcele kojoj pripada Deo parcele.
+        /// Id parcele.
         /// </summary>
         public Guid ParcelaId { get; set; }
 
@@ -26,13 +26,13 @@ namespace ParcelaService.DTOs
         public int RedniBrojDelaParcele { get; set; }
 
         /// <summary>
-        /// Povrsina dela parcele
+        /// Povrsina dela parcele.
         /// </summary>
         public int PovrsinaDelaParcele { get; set; }
 
         /// <summary>
-        /// Id kvaliteta zemljista
+        /// Id kvaliteta zemljista.
         /// </summary>
-        public Guid KvalitetZеmljistaId { get; set; }
+        public Guid KvalitetZemljistaId { get; set; }
     }
 }

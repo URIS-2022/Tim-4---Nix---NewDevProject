@@ -2,6 +2,9 @@
 
 namespace KatastarskaOpstinaService.DTOs.CreationDto
 {
+    /// <summary>
+    /// Predstavlja model statuta opstine pri kreiranju.
+    /// </summary>
     public class StatutOpstineCreationDto
     {
         /// <summary>

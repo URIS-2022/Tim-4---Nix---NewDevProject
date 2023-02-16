@@ -208,7 +208,7 @@ namespace ParcelaService.Controllers
             }
         }
 
-        // <summary>
+        /// <summary>
         /// Vraća opcije za rad sa parcelama
         /// </summary>
         /// <returns></returns>

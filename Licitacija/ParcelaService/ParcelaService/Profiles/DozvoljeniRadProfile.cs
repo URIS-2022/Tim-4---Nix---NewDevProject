@@ -3,6 +3,7 @@ using ParcelaService.DTOs.CreateDto;
 using ParcelaService.DTOs.UpdateDto;
 using ParcelaService.DTOs;
 using ParcelaService.Models;
+using ParcelaService.DTOs.ConfirmationDto;
 
 namespace ParcelaService.Profiles
 {

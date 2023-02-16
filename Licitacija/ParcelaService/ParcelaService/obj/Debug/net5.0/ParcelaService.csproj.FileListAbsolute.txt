@@ -65,3 +65,4 @@ C:\Users\AnaMarija LAP\Desktop\uris2022\Tim-4---Nix---NewDevProject\Licitacija\P
 C:\Users\AnaMarija LAP\Desktop\uris2022\Tim-4---Nix---NewDevProject\Licitacija\ParcelaService\ParcelaService\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\AnaMarija LAP\Desktop\uris2022\Tim-4---Nix---NewDevProject\Licitacija\ParcelaService\ParcelaService\bin\Debug\net5.0\ParcelaService.xml
 C:\Users\AnaMarija LAP\Desktop\uris2022\Tim-4---Nix---NewDevProject\Licitacija\ParcelaService\ParcelaService\obj\Debug\net5.0\ParcelaService.xml
+C:\Users\AnaMarija LAP\Desktop\uris2022\Tim-4---Nix---NewDevProject\Licitacija\ParcelaService\ParcelaService\bin\Debug\net5.0\ParcelaService.postman_collection.json

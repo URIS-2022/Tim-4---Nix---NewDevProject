@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System;
 
+
 namespace ParcelaService.Models
 {
     /// <summary>

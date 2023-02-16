@@ -63,9 +63,11 @@ namespace ParcelaService.Controllers
         [AllowAnonymous]
         public ActionResult<DeoParceleDto> GetDeoById(Guid deoParceleId)
         {
-            var deoParceleItem = _repository.GetById(deoParceleId);
+            DeoParcele deoParceleItem = _repository.GetById(deoParceleId);
+            Console.WriteLine(deoParceleItem.KvalitetZemljistaId);
             if (deoParceleItem != null)
             {
+                Console.WriteLine(deoParceleItem.KvalitetZemljistaId);
                 return Ok(_mapper.Map<DeoParceleDto>(deoParceleItem));
             }
 
@@ -99,7 +101,7 @@ namespace ParcelaService.Controllers
 
                 var deoParceleDto = _mapper.Map<DeoParcele>(deoParceleModel);
 
-                return CreatedAtRoute(nameof(GetDeoById), new { DeoPazrceleId = deoParceleDto.DeoParceleId }, deoParceleDto);
+                return CreatedAtRoute(nameof(GetDeoById), new { DeoParceleId = deoParceleDto.DeoParceleId }, deoParceleDto);
             }
             catch (Exception)
             {

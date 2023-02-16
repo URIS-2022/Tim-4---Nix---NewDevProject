@@ -75,7 +75,7 @@ namespace ParcelaService.Controllers
         /// <summary>
         /// Kreiranje novog dozvoljenog rada
         /// </summary>
-        /// <param name="dozvoljeniRadCreateDto">Model dozvoljenog rada/param>
+        /// <param name="dozvoljeniRadCreateDto">Model dozvoljenog rada</param>
         /// <param name="key"> ključ sa kojim se proverava autorizacija(key vrednost: Bearer AnaMarija)</param>
         /// <returns>Potvrda o kreiranju dozvoljenog rada</returns>
         /// <response code = "201">Vraća kreirani dozvoljeni rad</response>
@@ -164,14 +164,26 @@ namespace ParcelaService.Controllers
         [HttpDelete("{dozvoljeniRadId}")]
         public IActionResult Delete(Guid dozvoljeniRadId, [FromHeader(Name = "Authorization")] string key)
         {
-            var dozvoljeniRad = _repository.GetById(dozvoljeniRadId);
-            if (dozvoljeniRad == null)
+
+            if (!_authHelper.Authorize(key))
             {
-                return NotFound();
+                return StatusCode(StatusCodes.Status401Unauthorized, "Korisnik nije autorizovan!");
             }
-            _repository.Delete(dozvoljeniRadId);
-            _repository.SaveChanges();
-            return NoContent();
+            try
+            {
+                var dozvoljeniRad = _repository.GetById(dozvoljeniRadId);
+                if (dozvoljeniRad == null)
+                {
+                    return NotFound();
+                }
+                _repository.Delete(dozvoljeniRadId);
+                _repository.SaveChanges();
+                return NoContent();
+            }
+            catch(Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error deleting");
+            }
         }
 
         /// <summary>

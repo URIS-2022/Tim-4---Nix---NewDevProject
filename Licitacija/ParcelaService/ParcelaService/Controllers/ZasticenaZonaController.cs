@@ -75,11 +75,32 @@ namespace ParcelaService.Controllers
         }
 
         /// <summary>
+        /// Vraća sve delove parcele čiji je ID prosleđen
+        /// </summary>
+        /// <param name="zasticenaZonaId">ID parcele</param>
+        /// <returns>Lista delova parcele</returns>
+        /// <response code = "200">Vraća listu delova parcela</response>
+        /// <response code = "204">Ne postoji lista delova parcele</response>
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [HttpGet("DozvoljeniRad/{zasticenaZonaId}")]
+        [AllowAnonymous]
+        public ActionResult<IEnumerable<DozvoljeniRad>> GetDozvoljeniRadovi(Guid zasticenaZonaId)
+        {
+            var dozvoljeniRadovi = _repository.GetDozvoljeniRadovi(zasticenaZonaId);
+            if (dozvoljeniRadovi == null || dozvoljeniRadovi.Count() == 0)
+            {
+                return NoContent();
+            }
+            return Ok(_mapper.Map<IEnumerable<DozvoljeniRadDto>>(dozvoljeniRadovi));
+        }
+
+        /// <summary>
         /// Kreiranje nove zaštićene zone
         /// </summary>
         /// <param name="zasticenaZonaCreateDto">Model zaštićene zone</param>
         /// <param name="key"> ključ sa kojim se proverava autorizacija(key vrednost: Bearer AnaMarija)</param>
-        /// <returns>Potvrdu o kreiranju zaštićene zone/returns>
+        /// <returns>Potvrdu o kreiranju zaštićene zone</returns>
         /// <response code = "201">Vraća kreiranu zaštićenu zonu</response>
         /// <response code="401">Lice koje želi da izvrši kreiranje zaštićene zone nije autorizovani korisnik</response>
         /// <response code = "500">Došlo je do greške na serveru prilikom kreiranja zaštićene zone</response>

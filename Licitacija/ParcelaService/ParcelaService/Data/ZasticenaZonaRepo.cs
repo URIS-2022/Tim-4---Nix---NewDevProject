@@ -25,6 +25,10 @@ namespace ParcelaService.Data
             _context.Remove(zasticenaZona);
         }
 
+        public IEnumerable<DozvoljeniRad> GetDozvoljeniRadovi(Guid zasticenaZonaId)
+        {
+            return _context.DozvoljeniRadovi.Where(p => p.ZasticenaZonaId == zasticenaZonaId).ToList();
+        }
         public IEnumerable<ZasticenaZona> GetAll()
         {
             return _context.ZasticeneZone.ToList();

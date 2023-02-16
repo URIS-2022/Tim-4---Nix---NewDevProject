@@ -64,3 +64,4 @@ C:\Users\AnaMarija LAP\Desktop\uris2022\Tim-4---Nix---NewDevProject\Licitacija\K
 C:\Users\AnaMarija LAP\Desktop\uris2022\Tim-4---Nix---NewDevProject\Licitacija\KatastarskaOpstinaService\KatastarskaOpstinaService\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.InMemory.dll
 C:\Users\AnaMarija LAP\Desktop\uris2022\Tim-4---Nix---NewDevProject\Licitacija\KatastarskaOpstinaService\KatastarskaOpstinaService\bin\Debug\net5.0\KatastarskaOpstinaService.xml
 C:\Users\AnaMarija LAP\Desktop\uris2022\Tim-4---Nix---NewDevProject\Licitacija\KatastarskaOpstinaService\KatastarskaOpstinaService\obj\Debug\net5.0\KatastarskaOpstinaService.xml
+C:\Users\AnaMarija LAP\Desktop\uris2022\Tim-4---Nix---NewDevProject\Licitacija\KatastarskaOpstinaService\KatastarskaOpstinaService\bin\Debug\net5.0\KatastarskaOpstina Api.postman_collection.json

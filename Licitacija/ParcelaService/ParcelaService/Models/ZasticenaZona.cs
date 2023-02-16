@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System;
+using ParcelaService.DTOs;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ParcelaService.Models
 {
@@ -24,7 +26,7 @@ namespace ParcelaService.Models
         /// <summary>
         /// Lista dozvoljenih radova
         /// </summary>
-        [Required]
-        public List<DozvoljeniRad> DozvoljeniRadovi { get; set; }
+        [NotMapped]
+        public List<DozvoljeniRadDto> DozvoljeniRadovi { get; set; }
     }
 }

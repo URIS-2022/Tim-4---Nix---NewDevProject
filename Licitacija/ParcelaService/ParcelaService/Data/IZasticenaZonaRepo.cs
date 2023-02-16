@@ -13,5 +13,6 @@ namespace ParcelaService.Data
         void Update(ZasticenaZona zasticenaZona);
         void Delete(Guid zasticenaZonaId);
         bool SaveChanges();
+        public IEnumerable<DozvoljeniRad> GetDozvoljeniRadovi(Guid zasticenaZonaId);
     }
 }
