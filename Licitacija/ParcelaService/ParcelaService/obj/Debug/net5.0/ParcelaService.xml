@@ -1,0 +1,1119 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ParcelaService</name>
+    </assembly>
+    <members>
+        <member name="M:ParcelaService.Controllers.DeoParceleController.GetAll(System.Nullable{System.Guid})">
+            <summary>
+            Vraća sve delove parcele ili opciono sve delove parcele sa unetim Id-jem
+            </summary>
+            <param name="parcelaId">Id parcele</param>
+            <returns>Lista delova parcele</returns>
+            <response code = "200">Vraća listu delova parcela</response>
+            <response code = "204">Ne postoji nijedan deo parcele</response>
+        </member>
+        <member name="M:ParcelaService.Controllers.DeoParceleController.GetDeoById(System.Guid)">
+            <summary>
+            Vraća deo parcele sa unetim Id-jem
+            </summary>
+            <param name="deoParceleId">Id dela parcele</param>
+            <returns>Odgovarajući deo parcele</returns>
+            <response code = "200">Vraća traženi deo parcele</response>
+            <response code = "404">Nije pronađena traženi deo parcele</response>
+        </member>
+        <member name="M:ParcelaService.Controllers.DeoParceleController.CreateDeoParcele(ParcelaService.DTOs.CreateDto.DeoParceleCreateDto,System.String)">
+            <summary>
+            Kreiranje novog dela parcele
+            </summary>
+            <param name="deoParceleCreateDto">Model dela parcele</param>
+            <param name="key"> ključ sa kojim se proverava autorizacija(key vrednost: Bearer AnaMarija)</param>
+            <returns>Potvrda o kreiranju dela parcele</returns>
+             <response code = "201">Vraća kreirani deo parcele</response>
+            <response code="401">Lice koje želi da izvrši kreiranje dela parcele nije autorizovani korisnik</response>
+            <response code = "500">Došlo je do greške na serveru prilikom kreiranja dela parcele</response>
+        </member>
+        <member name="M:ParcelaService.Controllers.DeoParceleController.Update(ParcelaService.DTOs.UpdateDto.DeoParceleUpdateDto,System.String)">
+            <summary>
+            Ažuriranje dela parcele
+            </summary>
+            <param name="deoParcele">Model dela parcele</param>
+            <param name="key"> ključ sa kojim se proverava autorizacija(key vrednost: Bearer AnaMarija)</param>
+            <returns>Potvrda o izmenama u delu parcele</returns>
+            <response code="200">Vraća ažurirani deo parcele</response>
+            <response code="401">Lice koje želi da izvrši ažuriranje nije autorizovani korisnik</response>
+            <response code="404">Nije pronađen deo parcele za ažuriranje</response>
+            <response code="500">Došlo je do greške na serveru prilikom ažuriranja dela parcele</response>
+        </member>
+        <member name="M:ParcelaService.Controllers.DeoParceleController.Delete(System.Guid,System.String)">
+            <summary>
+            Brisanje dela parcele
+            </summary>
+            <param name="deoParceleId">ID dela parcele</param>
+             <param name="key"> ključ sa kojim se proverava autorizacija(key vrednost: Bearer AnaMarija)</param>
+            <returns>Status 204 (NoContent)</returns>
+            <response code="204">Deo parcele uspešno obrisan</response>
+            <response code="401">Lice koje želi da izvrši brisanje nije autorizovani korisnik</response>
+            <response code="404">Nije pronađen deo parcele za brisanje</response>
+            <response code="500">Došlo je do greške na serveru prilikom brisanja dela parcele</response>
+        </member>
+        <member name="M:ParcelaService.Controllers.DeoParceleController.GetDeoParceleOptions">
+            <summary>
+            Vraća opcije za rad delovima parcele
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ParcelaService.Controllers.DozvoljeniRadController.GetAll">
+            <summary>
+            Vraća sve dozvoljene radove
+            </summary>
+            <returns>Lista dozvoljenih radova</returns>
+            <response code = "200">Vraća listu dozvoljenih radova</response>
+            <response code = "204">Ne postoji nijedan dozvoljeni rad</response>
+        </member>
+        <member name="M:ParcelaService.Controllers.DozvoljeniRadController.GetRadById(System.Guid)">
+            <summary>
+            Vrača dozvoljene radove po ID-ju
+            </summary>
+            <param name="dozvoljeniRadId">ID dozvoljenog rada</param>
+            <returns>Odgovarajući dozvoljeni rad</returns>
+            <response code = "200">Vraća traženi dozvoljeni rad</response>
+            <response code = "404">Nije pronađen traženi dozvoljeni rad</response>
+        </member>
+        <member name="M:ParcelaService.Controllers.DozvoljeniRadController.CreateDozvoljeniRad(ParcelaService.DTOs.CreateDto.DozvoljeniRadCreateDto,System.String)">
+            <summary>
+            Kreiranje novog dozvoljenog rada
+            </summary>
+            <param name="dozvoljeniRadCreateDto">Model dozvoljenog rada</param>
+            <param name="key"> ključ sa kojim se proverava autorizacija(key vrednost: Bearer AnaMarija)</param>
+            <returns>Potvrda o kreiranju dozvoljenog rada</returns>
+            <response code = "201">Vraća kreirani dozvoljeni rad</response>
+            <response code="401">Lice koje želi da izvrši kreiranje dozvoljenog rada nije autorizovani korisnik</response>
+            <response code = "500">Došlo je do greške na serveru prilikom kreiranja dozvoljenog rada</response>
+        </member>
+        <member name="M:ParcelaService.Controllers.DozvoljeniRadController.Update(ParcelaService.DTOs.UpdateDto.DozvoljeniRadUpdateDto,System.String)">
+            <summary>
+            Ažuriranje dozvoljenih radova
+            </summary>
+            <param name="dozvoljeniRad">Model dozvoljenog rada</param>
+            <param name="key"> ključ sa kojim se proverava autorizacija(key vrednost: Bearer AnaMarija)</param>
+            <returns>Potvrda o izmenama u dozvoljenom radu</returns>
+            <response code="200">Vraća ažuriran dozvoljeni rada</response>
+            <response code="401">Lice koje želi da izvrši ažuriranje nije autorizovani korisnik</response>
+            <response code="404">Nije pronađen dozvoljeni rad za ažuriranje</response>
+            <response code="500">Došlo je do greške na serveru prilikom ažuriranja dozvoljenog rada</response>
+        </member>
+        <member name="M:ParcelaService.Controllers.DozvoljeniRadController.Delete(System.Guid,System.String)">
+            <summary>
+            Brisanje dozvoljenog rada
+            </summary>
+            <param name="dozvoljeniRadId">Id dozvoljenog rada</param>
+            <param name="key"> ključ sa kojim se proverava autorizacija(key vrednost: Bearer AnaMarija)</param>
+            <returns>Status 204 (NoContent)</returns>
+            <response code="204">Dozvoljeni rad uspešno obrisan</response>
+            <response code="401">Lice koje želi da izvrši brisanje nije autorizovani korisnik</response>
+            <response code="404">Nije pronađen dozvoljeni rad za brisanje</response>
+            <response code="500">Došlo je do greške na serveru prilikom brisanja dozvoljenog rada</response>
+        </member>
+        <member name="M:ParcelaService.Controllers.DozvoljeniRadController.GetDozvoljeniRadOptions">
+            <summary>
+            Vraća opcije za rad dozvoljenim radovima
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ParcelaService.Controllers.KvalitetZemljistaController.GetAll">
+            <summary>
+            Vraća sve kvalitete zemljišta
+            </summary>
+            <returns>Lista kvaliteta zemljišta</returns>
+            <response code = "200">Vraća listu kvaliteta zemljišta</response>
+            <response code = "204">Ne postoji nijedan kvalitet zemljišta</response>
+        </member>
+        <member name="M:ParcelaService.Controllers.KvalitetZemljistaController.GetKvalitetById(System.Guid)">
+            <summary>
+            Vraća kvalitet zemljišta sa unetim ID
+            </summary>
+            <param name="kvalitetZemljistaId">ID kvaliteta zemljišta</param>
+            <returns>Odgovarajući kvalitet zemljišta</returns>
+            <response code = "200">Vraća traženi kvalitet zemljišta</response>
+            <response code = "404">Nije pronađen traženi kvalitet zemljišta</response>
+        </member>
+        <member name="M:ParcelaService.Controllers.KvalitetZemljistaController.CreateKvalitetZemljista(ParcelaService.DTOs.CreateDto.KvalitetZemljistaCreateDto,System.String)">
+            <summary>
+            Kreiranje novog kvaliteta zemljišta
+            </summary>
+            <param name="kvalitetZemljistaCreateDto">Model kvaliteta zemljišta</param>
+            <param name="key"> ključ sa kojim se proverava autorizacija(key vrednost: Bearer AnaMarija)</param>
+            <returns>Potvrdu o kreiranju kvaliteta zemljišta</returns>
+            <response code = "201">Vraća kreirani kvalitet zemljišta</response>
+            <response code="401">Lice koje želi da izvrši kreiranje kvaliteta zemljišta nije autorizovani korisnik</response>
+            <response code = "500">Došlo je do greške na serveru prilikom kreiranja kvaliteta zemljišta</response>
+        </member>
+        <member name="M:ParcelaService.Controllers.KvalitetZemljistaController.Update(ParcelaService.DTOs.UpdateDto.KvalitetZemljistaUpdateDto,System.String)">
+            <summary>
+            Ažuriranje kvaliteta zemljišta
+            </summary>
+            <param name="kvalitetZemljista">Model kvaliteta zemljišta</param>
+            <param name="key"> ključ sa kojim se proverava autorizacija(key vrednost: Bearer AnaMarija)</param>
+            <returns>Potvrda o izmenama u kvalitetu zemljšsta</returns>
+            <response code="200">Vraća ažurirani kvalitet zemljišta</response>
+            <response code="401">Lice koje želi da izvrši ažuriranje nije autorizovani korisnik</response>
+            <response code="404">Nije pronađen kvalitet zemljišta za ažuriranje</response>
+            <response code="500">Došlo je do greške na serveru prilikom ažuriranja kvaliteta zemljišta</response>
+        </member>
+        <member name="M:ParcelaService.Controllers.KvalitetZemljistaController.Delete(System.Guid,System.String)">
+            <summary>
+            Brisanje kvaliteta zemljišta
+            </summary>
+            <param name="kvalitetZemljistaId">ID kvaliteta zemljišta</param>
+             <param name="key"> ključ sa kojim se proverava autorizacija(key vrednost: Bearer AnaMarija)</param>
+            <returns>Status 204 (NoContent)</returns>
+            <response code="204">Kvalitet zemljišta uspešno obrisan</response>
+            <response code="401">Lice koje želi da izvrši brisanje nije autorizovani korisnik</response>
+            <response code="404">Nije pronađen kvalitet zemljišta  za brisanje</response>
+            <response code="500">Došlo je do greške na serveru prilikom brisanja kvaliteta zemljišta</response>
+        </member>
+        <member name="M:ParcelaService.Controllers.KvalitetZemljistaController.GetKvalitetZemljistaOptions">
+            <summary>
+            Vraća opcije za rad kvalitetima zemljišta
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ParcelaService.Controllers.ParcelaController.GetAll(System.Nullable{System.Guid})">
+            <summary>
+            Vraća sve parcele ili opciono sve parcele koje pripadaju nekoj katastarskoj opštini
+            </summary>
+            <param name="katastarskaOpstinaId">ID katastarske opštine</param>
+            <returns>Lista parcela</returns>
+            <response code = "200">Vraća listu parcela</response>
+            <response code = "204">Ne postoji nijedna parcela</response>
+        </member>
+        <member name="M:ParcelaService.Controllers.ParcelaController.GetDeloveParcele(System.Guid)">
+            <summary>
+            Vraća sve delove parcele čiji je ID prosleđen
+            </summary>
+            <param name="parcelaId">ID parcele</param>
+            <returns>Lista delova parcele</returns>
+            <response code = "200">Vraća listu delova parcela</response>
+            <response code = "204">Ne postoji lista delova parcele</response>
+        </member>
+        <member name="M:ParcelaService.Controllers.ParcelaController.GetParcelaById(System.Guid)">
+            <summary>
+            Vraća parcelu po ID-ju
+            </summary>
+            <param name="parcelaId">ID parcele</param>
+            <returns>Odgovarajuća parcela</returns>
+            <response code = "200">Vraća traženu parcelu</response>
+            <response code = "404">Nije pronađena tražena parcela</response>
+        </member>
+        <member name="M:ParcelaService.Controllers.ParcelaController.CreateParcela(ParcelaService.DTOs.CreateDto.ParcelaCreateDto,System.String)">
+            <summary>
+            Kreiranje nove parcele
+            </summary>
+            <param name="parcelaCreateDto">Model parcele</param>
+            <param name="key"> ključ sa kojim se proverava autorizacija(key vrednost: Bearer AnaMarija)</param>
+            <returns>Potvrda o kreiranju parcele</returns>
+            <response code = "201">Vraća kreiranu parcele</response>
+            <response code="401">Lice koje želi da izvrši kreiranje parcele nije autorizovani korisnik</response>
+            <response code = "500">Došlo je do greške na serveru prilikom kreiranja parcele</response>
+        </member>
+        <member name="M:ParcelaService.Controllers.ParcelaController.Update(ParcelaService.DTOs.UpdateDto.ParcelaUpdateDto,System.String)">
+            <summary>
+            Ažuriranje parcele
+            </summary>
+            <param name="parcela">Model parcele</param>
+            <param name="key"> ključ sa kojim se proverava autorizacija(key vrednost: Bearer AnaMarija)</param>
+            <returns>Potvrda o izmenama u parceli</returns>
+            <response code="200">Vraća ažuriranu parcelu</response>
+            <response code="401">Lice koje želi da izvrši ažuriranje nije autorizovani korisnik</response>
+            <response code="404">Nije pronađena parcela za ažuriranje</response>
+            <response code="500">Došlo je do greške na serveru prilikom ažuriranja parcele</response>
+        </member>
+        <member name="M:ParcelaService.Controllers.ParcelaController.Delete(System.Guid,System.String)">
+            <summary>
+            Brisanje parcele
+            </summary>
+            <param name="parcelaId">Id parcele</param>
+             <param name="key"> ključ sa kojim se proverava autorizacija(key vrednost: Bearer AnaMarija)</param>
+            <returns>Status 204 (NoContent)</returns>
+            <response code="204">Parcela uspešno obrisana</response>
+            <response code="401">Lice koje želi da izvrši brisanje nije autorizovani korisnik</response>
+            <response code="404">Nije pronađena parcela za brisanje</response>
+            <response code="500">Došlo je do greške na serveru prilikom brisanja parcele</response>
+        </member>
+        <member name="M:ParcelaService.Controllers.ParcelaController.GetParcelaOptions">
+            <summary>
+            Vraća opcije za rad sa parcelama
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ParcelaService.Controllers.ZasticenaZonaController.GetAll">
+            <summary>
+            Vraca sve zaštićene zone
+            </summary>
+            <returns>Lista zaštićenih zona</returns>
+            <response code = "200">Vraća listu zaštićenih zona</response>
+            <response code = "204">Ne postoji nijedna zaštićena zona</response>
+        </member>
+        <member name="M:ParcelaService.Controllers.ZasticenaZonaController.GetById(System.Guid)">
+            <summary>
+            Vraca zaštićenu zonu po ID-ju
+            </summary>
+            <param name="zasticenaZonaId">ID zaštićene zone</param>
+            <returns>Odgovarajuća zaštićena zona</returns>
+            <response code = "200">Vraća traženu zaštićenu zonu</response>
+            <response code = "404">Nije pronađena tražena zaštićena zona</response>
+        </member>
+        <member name="M:ParcelaService.Controllers.ZasticenaZonaController.GetDozvoljeniRadovi(System.Guid)">
+            <summary>
+            Vraća sve delove parcele čiji je ID prosleđen
+            </summary>
+            <param name="zasticenaZonaId">ID parcele</param>
+            <returns>Lista delova parcele</returns>
+            <response code = "200">Vraća listu delova parcela</response>
+            <response code = "204">Ne postoji lista delova parcele</response>
+        </member>
+        <member name="M:ParcelaService.Controllers.ZasticenaZonaController.CreateZasticenaZona(ParcelaService.DTOs.CreateDto.ZasticenaZonaCreateDto,System.String)">
+            <summary>
+            Kreiranje nove zaštićene zone
+            </summary>
+            <param name="zasticenaZonaCreateDto">Model zaštićene zone</param>
+            <param name="key"> ključ sa kojim se proverava autorizacija(key vrednost: Bearer AnaMarija)</param>
+            <returns>Potvrdu o kreiranju zaštićene zone</returns>
+            <response code = "201">Vraća kreiranu zaštićenu zonu</response>
+            <response code="401">Lice koje želi da izvrši kreiranje zaštićene zone nije autorizovani korisnik</response>
+            <response code = "500">Došlo je do greške na serveru prilikom kreiranja zaštićene zone</response>
+        </member>
+        <member name="M:ParcelaService.Controllers.ZasticenaZonaController.Update(ParcelaService.DTOs.UpdateDto.ZasticenaZonaUpdateDto,System.String)">
+            <summary>
+            Ažuriranje zaštićene zone
+            </summary>
+            <param name="zasticenaZona">Model zaštićene zone</param>
+            <param name="key"> ključ sa kojim se proverava autorizacija(key vrednost: Bearer AnaMarija)</param>
+            <returns>Potvrdu o izmenama o zaštićenoj zoni</returns>
+            <response code="200">Vraća ažuriranu zaštićenu zonu</response>
+            <response code="401">Lice koje želi da izvrši ažuriranje nije autorizovani korisnik</response>
+            <response code="404">Nije pronađena zaštićena zona za ažuriranje</response>
+            <response code="500">Došlo je do greške na serveru prilikom ažuriranja zaštićene zone</response>
+        </member>
+        <member name="M:ParcelaService.Controllers.ZasticenaZonaController.Delete(System.Guid,System.String)">
+            <summary>
+            Brisanje zaštićene zone
+            </summary>
+            <param name="zasticenaZonaId">ID zaštićene zone</param>
+            <param name="key"> ključ sa kojim se proverava autorizacija(key vrednost: Bearer AnaMarija)</param>
+            <returns>Status 204 (NoContent)</returns>
+            <response code="204">Zaštićena zona uspešno obrisana</response>
+            <response code="401">Lice koje želi da izvrši brisanje nije autorizovani korisnik</response>
+            <response code="404">Nije pronađena zaštićena zona za brisanje</response>
+            <response code="500">Došlo je do greške na serveru prilikom brisanja zaštićene zone</response>
+        </member>
+        <member name="M:ParcelaService.Controllers.ZasticenaZonaController.GetZasticenaZonaOptions">
+            <summary>
+            Vraća opcije za rad sa zaštićenim zonama
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:ParcelaService.Data.ParcelaDbContext.Parcele">
+            <summary>
+            Specifikacija propertija, odnosno tabela koje ce biti kreirane u bazi.
+            </summary>
+        </member>
+        <member name="M:ParcelaService.Data.PrepDb.SeedData(ParcelaService.Data.ParcelaDbContext)">
+            <summary>
+            Metoda koja omogucava populaciju podataka u bazu.
+            </summary>
+            <param name="context">Kontekst baze u koju skladistimo podatke.</param>
+        </member>
+        <member name="T:ParcelaService.DTOs.ConfirmationDto.DeoParceleConfirmationDto">
+            <summary>
+            Predstavlja model dela parcele koji sluzi za potvrdu.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.ConfirmationDto.DeoParceleConfirmationDto.DeoParceleId">
+            <summary>
+            Id dela parcele
+            </summary>
+        </member>
+        <member name="T:ParcelaService.DTOs.ConfirmationDto.DozvoljeniRadConfirmationDto">
+            <summary>
+            Predstavlja model dozvoljenog rada koji sluzi za potvrdu.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.ConfirmationDto.DozvoljeniRadConfirmationDto.DozvoljeniRadId">
+            <summary>
+            Id za dozvoljeni rad.
+            </summary>
+        </member>
+        <member name="T:ParcelaService.DTOs.ConfirmationDto.KvalitetZemljistaConfirmationDto">
+            <summary>
+            Predstavlja model kvaliteta zemljista koji sluzi za potvrdu.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.ConfirmationDto.KvalitetZemljistaConfirmationDto.KvalitetZemljistaId">
+            <summary>
+            Id kvaliteta zemljista.
+            </summary>
+        </member>
+        <member name="T:ParcelaService.DTOs.ConfirmationDto.ParcelaConfirmationDto">
+            <summary>
+            Predstavlja model parcele koji sluzi za potvrdu.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.ConfirmationDto.ParcelaConfirmationDto.ParcelaId">
+            <summary>
+            Id parcele
+            </summary>
+        </member>
+        <member name="T:ParcelaService.DTOs.ConfirmationDto.ZasticenaZonaConfirmationDto">
+            <summary>
+            Predstavlja model zasticene zone koji sluzi za potvrdu.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.ConfirmationDto.ZasticenaZonaConfirmationDto.ZasticenaZonaId">
+            <summary>
+            Id zasticene zone.
+            </summary>
+        </member>
+        <member name="T:ParcelaService.DTOs.CreateDto.DeoParceleCreateDto">
+            <summary>
+            Predstavlja model dela parcele prilikom kreiranja tipa.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.CreateDto.DeoParceleCreateDto.ParcelaId">
+            <summary>
+            Id parcele.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.CreateDto.DeoParceleCreateDto.RedniBrojDelaParcele">
+            <summary>
+            Redni broj dela parcele.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.CreateDto.DeoParceleCreateDto.PovrsinaDelaParcele">
+            <summary>
+            Povrsina dela parcele.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.CreateDto.DeoParceleCreateDto.KvalitetZemljistaId">
+            <summary>
+            Id kvaliteta zemljista.
+            </summary>
+        </member>
+        <member name="T:ParcelaService.DTOs.CreateDto.DozvoljeniRadCreateDto">
+            <summary>
+            Predstavlja model dozvoljenog rada prilikom kreiranja tipa.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.CreateDto.DozvoljeniRadCreateDto.Opis">
+            <summary>
+            Opis dozvoljenog rada.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.CreateDto.DozvoljeniRadCreateDto.ZasticenaZonaId">
+            <summary>
+            Id zasticene zone
+            </summary>
+        </member>
+        <member name="T:ParcelaService.DTOs.CreateDto.KvalitetZemljistaCreateDto">
+            <summary>
+            Predstavlja model kvaliteta zemljista prilikom kreiranja tipa.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.CreateDto.KvalitetZemljistaCreateDto.OznakaKvaliteta">
+            <summary>
+            Oznaka kvaliteta zemljista.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.CreateDto.KvalitetZemljistaCreateDto.Opis">
+            <summary>
+            Opis kvaliteta zemljista.
+            </summary>
+        </member>
+        <member name="T:ParcelaService.DTOs.CreateDto.ParcelaCreateDto">
+            <summary>
+            Predstavlja model parcele prilikom kreiranja tipa.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.CreateDto.ParcelaCreateDto.BrojParcele">
+            <summary>
+            Broj parcele.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.CreateDto.ParcelaCreateDto.BrojListaNepokretnosti">
+            <summary>
+            Broj lista nepokretnosti.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.CreateDto.ParcelaCreateDto.KatastarskaOpstinaId">
+            <summary>
+            Id katastarske opstine.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.CreateDto.ParcelaCreateDto.Kultura">
+            <summary>
+            Kultura.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.CreateDto.ParcelaCreateDto.Klasa">
+            <summary>
+            Klasa.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.CreateDto.ParcelaCreateDto.Obradivost">
+            <summary>
+            Obradivost.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.CreateDto.ParcelaCreateDto.ZasticenaZonaId">
+            <summary>
+            Id zasticene zone.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.CreateDto.ParcelaCreateDto.OblikSvojine">
+            <summary>
+            Oblik svojine.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.CreateDto.ParcelaCreateDto.Odvodnjavanje">
+            <summary>
+            Odvodnjavanje.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.CreateDto.ParcelaCreateDto.KulturaStvarnoStanje">
+            <summary>
+            Stvarno stanje kulture.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.CreateDto.ParcelaCreateDto.KlasaStvarnoStanje">
+            <summary>
+            Stvarno stanje klase.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.CreateDto.ParcelaCreateDto.ObradivostStvarnoStanje">
+            <summary>
+            Stvarno stanje obradivosti.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.CreateDto.ParcelaCreateDto.ZasticenaZonaStvarnoStanje">
+            <summary>
+            Stvarno stanje zasticene zone.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.CreateDto.ParcelaCreateDto.OdvodnjavanjeStvarnoStanje">
+            <summary>
+            Stvarno stanje odvodnjavanja.
+            </summary>
+        </member>
+        <member name="T:ParcelaService.DTOs.CreateDto.ZasticenaZonaCreateDto">
+            <summary>
+            Predstavlja model zasticene zone prilikom kreiranja tipa
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.CreateDto.ZasticenaZonaCreateDto.BrojZasticeneZone">
+            <summary>
+            Broj zasticene zone.
+            </summary>
+        </member>
+        <member name="T:ParcelaService.DTOs.DeoParceleDto">
+            <summary>
+            Predstavlja model dela parcele.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.DeoParceleDto.DeoParceleId">
+            <summary>
+            Id dela parcele.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.DeoParceleDto.ParcelaId">
+            <summary>
+            Id parcele.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.DeoParceleDto.RedniBrojDelaParcele">
+            <summary>
+            Redni broj dela parcele.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.DeoParceleDto.PovrsinaDelaParcele">
+            <summary>
+            Povrsina dela parcele.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.DeoParceleDto.KvalitetZemljistaId">
+            <summary>
+            Id kvaliteta zemljista.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.DozvoljeniRadDto.DozvoljeniRadId">
+            <summary>
+            Id za dozvoljeni rad
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.DozvoljeniRadDto.Opis">
+            <summary>
+            Opis dozvoljenog rada
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.DozvoljeniRadDto.ZasticenaZonaId">
+            <summary>
+            Id zasticene zone - strani kljuc
+            </summary>
+        </member>
+        <member name="T:ParcelaService.DTOs.KvalitetZemljistaDto">
+            <summary>
+            Predstavlja model kvaliteta zemljista.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.KvalitetZemljistaDto.KvalitetZemljistaId">
+            <summary>
+            Id kvaliteta zemljista
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.KvalitetZemljistaDto.OznakaKvaliteta">
+            <summary>
+            Oznaka kvaliteta zemljista
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.KvalitetZemljistaDto.Opis">
+            <summary>
+            Opis kvaliteta zemljista
+            </summary>
+        </member>
+        <member name="T:ParcelaService.DTOs.ParcelaDto">
+            <summary>
+            Predstavlja model parcela.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.ParcelaDto.ParcelaId">
+            <summary>
+            Id parcele.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.ParcelaDto.BrojParcele">
+            <summary>
+            Broj parcele.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.ParcelaDto.BrojListaNepokretnosti">
+            <summary>
+            Broj lista nepokretnosti.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.ParcelaDto.KatastarskaOpstinaId">
+            <summary>
+            Id katastarske opstine kojoj pripada parcela.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.ParcelaDto.Kultura">
+            <summary>
+            Kultura.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.ParcelaDto.Klasa">
+            <summary>
+            Klasa.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.ParcelaDto.Obradivost">
+            <summary>
+            Obradivost.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.ParcelaDto.ZasticenaZonaId">
+            <summary>
+            Id zasticene zone.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.ParcelaDto.OblikSvojine">
+            <summary>
+            Oblik svojine.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.ParcelaDto.KulturaStvarnoStanje">
+            <summary>
+            Stvarno stanje kulture.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.ParcelaDto.ObradivostStvarnoStanje">
+            <summary>
+            Stvarno stanje obradivosti.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.ParcelaDto.OdvodnjavanjeStvarnoStanje">
+            <summary>
+            Stvarno stanje odvodnjavanja.
+            </summary>
+        </member>
+        <member name="T:ParcelaService.DTOs.UpdateDto.DeoParceleUpdateDto">
+            <summary>
+            Predstavlja model dela parcele koji se koristi prilikom azuriranja podataka.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.UpdateDto.DeoParceleUpdateDto.DeoParceleId">
+            <summary>
+            Id dela parcele.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.UpdateDto.DeoParceleUpdateDto.ParcelaId">
+            <summary>
+            Id parcele.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.UpdateDto.DeoParceleUpdateDto.RedniBrojDelaParcele">
+            <summary>
+            Redni broj dela parcele.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.UpdateDto.DeoParceleUpdateDto.PovrsinaDelaParcele">
+            <summary>
+            Povrsina dela parcele.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.UpdateDto.DeoParceleUpdateDto.KvalitetZemljistaId">
+            <summary>
+            Id kvaliteta zemljista.
+            </summary>
+        </member>
+        <member name="T:ParcelaService.DTOs.UpdateDto.DozvoljeniRadUpdateDto">
+            <summary>
+            Predstavlja model dozvoljenog rada koji se koristi prilikom azuriranja podataka.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.UpdateDto.DozvoljeniRadUpdateDto.DozvoljeniRadId">
+            <summary>
+            Id dozvoljenog rada.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.UpdateDto.DozvoljeniRadUpdateDto.Opis">
+            <summary>
+            Opis dozvoljenog rada.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.UpdateDto.DozvoljeniRadUpdateDto.ZasticenaZonaId">
+            <summary>
+            Id zasticene zone.
+            </summary>
+        </member>
+        <member name="T:ParcelaService.DTOs.UpdateDto.KvalitetZemljistaUpdateDto">
+            <summary>
+            Predstavlja model kvaliteta zemljista koji se koristi prilikom azuriranja podataka.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.UpdateDto.KvalitetZemljistaUpdateDto.KvalitetZemljistaId">
+            <summary>
+            Id kvaliteta zemljista.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.UpdateDto.KvalitetZemljistaUpdateDto.OznakaKvaliteta">
+            <summary>
+            Oznaka kvaliteta zemljista.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.UpdateDto.KvalitetZemljistaUpdateDto.Opis">
+            <summary>
+            Opis kvaliteta zemljista.
+            </summary>
+        </member>
+        <member name="T:ParcelaService.DTOs.UpdateDto.ParcelaUpdateDto">
+            <summary>
+            Predstavlja model parcele koji se koristi prilikom azuriranja podataka.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.UpdateDto.ParcelaUpdateDto.ParcelaId">
+            <summary>
+            Id parcele.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.UpdateDto.ParcelaUpdateDto.BrojParcele">
+            <summary>
+            Broj parcele.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.UpdateDto.ParcelaUpdateDto.BrojListaNepokretnosti">
+            <summary>
+            Broj lista nepokretnosti.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.UpdateDto.ParcelaUpdateDto.KatastarskaOpstinaId">
+            <summary>
+            Id katastarske opstine 
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.UpdateDto.ParcelaUpdateDto.Kultura">
+            <summary>
+            Kultura.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.UpdateDto.ParcelaUpdateDto.Klasa">
+            <summary>
+            Klasa.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.UpdateDto.ParcelaUpdateDto.Obradivost">
+            <summary>
+            Obradivost.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.UpdateDto.ParcelaUpdateDto.ZasticenaZonaId">
+            <summary>
+            Id zasticene zone.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.UpdateDto.ParcelaUpdateDto.OblikSvojine">
+            <summary>
+            Oblik svojine.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.UpdateDto.ParcelaUpdateDto.Odvodnjavanje">
+            <summary>
+            Odvodnjavanje.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.UpdateDto.ParcelaUpdateDto.KulturaStvarnoStanje">
+            <summary>
+            Stvarno stanje kulture.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.UpdateDto.ParcelaUpdateDto.KlasaStvarnoStanje">
+            <summary>
+            Stvarno stanje klase.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.UpdateDto.ParcelaUpdateDto.ObradivostStvarnoStanje">
+            <summary>
+            Stvarno stanje obradivosti.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.UpdateDto.ParcelaUpdateDto.ZasticenaZonaStvarnoStanje">
+            <summary>
+            Stvarno stanje zasticene zone.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.UpdateDto.ParcelaUpdateDto.OdvodnjavanjeStvarnoStanje">
+            <summary>
+            Stvarno stanje odvodnjavanja.
+            </summary>
+        </member>
+        <member name="T:ParcelaService.DTOs.UpdateDto.ZasticenaZonaUpdateDto">
+            <summary>
+            Predstavlja model zasticene zone koji se koristi prilikom azuriranja podataka.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.UpdateDto.ZasticenaZonaUpdateDto.ZasticenaZonaId">
+            <summary>
+            Id zasticene zone.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.UpdateDto.ZasticenaZonaUpdateDto.BrojZasticeneZone">
+            <summary>
+            Broj zasticene zone.
+            </summary>
+        </member>
+        <member name="T:ParcelaService.DTOs.ZasticenaZonaDto">
+            <summary>
+            Predstavlja model zasticene zone.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.ZasticenaZonaDto.ZasticenaZonaId">
+            <summary>
+            Id zasticene zone
+            </summary>
+        </member>
+        <member name="P:ParcelaService.DTOs.ZasticenaZonaDto.BrojZasticeneZone">
+            <summary>
+            Broj zasticene zone
+            </summary>
+        </member>
+        <member name="T:ParcelaService.Entities.Confirmations.DeoParceleConfirmation">
+            <summary>
+            Predstavlja realni entitet dela parcele za potvrdu.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.Entities.Confirmations.DeoParceleConfirmation.DeoParceleId">
+            <summary>
+            Id dela parcele
+            </summary>
+        </member>
+        <member name="T:ParcelaService.Entities.Confirmations.DozvoljeniRadConfirmation">
+            <summary>
+            Predstavlja realni entitet dozvoljenog rada za potvrdu.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.Entities.Confirmations.DozvoljeniRadConfirmation.DozvoljeniRadId">
+            <summary>
+            Id dozvoljenog rada
+            </summary>
+        </member>
+        <member name="T:ParcelaService.Entities.Confirmations.KvalitetZemljistaConfirmation">
+            <summary>
+            Predstavlja realni entitet kvaliteta zemljista za potvrdu.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.Entities.Confirmations.KvalitetZemljistaConfirmation.KvalitetZemljistaId">
+            <summary>
+            Id kvaliteta zemljista
+            </summary>
+        </member>
+        <member name="T:ParcelaService.Entities.Confirmations.ParcelaConfirmation">
+            <summary>
+            Predstavlja realni entitet parcele za potvrdu.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.Entities.Confirmations.ParcelaConfirmation.ParcelaId">
+            <summary>
+            Id parcele
+            </summary>
+        </member>
+        <member name="T:ParcelaService.Entities.Confirmations.ZasticenaZonaConfirmation">
+            <summary>
+            Predstavlja realni entitet zasticene zone za potvrdu.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.Entities.Confirmations.ZasticenaZonaConfirmation.ZasticenaZonaId">
+            <summary>
+            Id zasticene zone
+            </summary>
+        </member>
+        <member name="T:ParcelaService.Models.DeoParcele">
+            <summary>
+            Predstavlja realni entitet dela parcele.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.Models.DeoParcele.DeoParceleId">
+            <summary>
+            Id dela parcele
+            </summary>
+        </member>
+        <member name="P:ParcelaService.Models.DeoParcele.ParcelaId">
+            <summary>
+            Strani kljuc parcele
+            </summary>
+        </member>
+        <member name="P:ParcelaService.Models.DeoParcele.Parcela">
+            <summary>
+            Parcela entitet
+            </summary>
+        </member>
+        <member name="P:ParcelaService.Models.DeoParcele.RedniBrojDelaParcele">
+            <summary>
+            Redni broj dela parcele
+            </summary>
+        </member>
+        <member name="P:ParcelaService.Models.DeoParcele.PovrsinaDelaParcele">
+            <summary>
+            Povrsina dela parcele
+            </summary>
+        </member>
+        <member name="P:ParcelaService.Models.DeoParcele.KvalitetZemljistaId">
+            <summary>
+            Strani ključ kvaliteta zemljista
+            </summary>
+        </member>
+        <member name="P:ParcelaService.Models.DeoParcele.KvalitetZemljista">
+            <summary>
+            Kvalitet zemljista entitet
+            </summary>
+        </member>
+        <member name="T:ParcelaService.Models.DozvoljeniRad">
+            <summary>
+            Predstavlja realni entitet dozvoljenog rada.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.Models.DozvoljeniRad.DozvoljeniRadId">
+            <summary>
+            Id dozvoljenog rada
+            </summary>
+        </member>
+        <member name="P:ParcelaService.Models.DozvoljeniRad.Opis">
+            <summary>
+            Opis dozvoljenog rada
+            </summary>
+        </member>
+        <member name="P:ParcelaService.Models.DozvoljeniRad.ZasticenaZonaId">
+            <summary>
+            Strani kljuc zasticene zone
+            </summary>
+        </member>
+        <member name="P:ParcelaService.Models.DozvoljeniRad.ZasticenaZona">
+            <summary>
+            Zasticena zona entitet
+            </summary>
+        </member>
+        <member name="T:ParcelaService.Models.Enums.Klasa">
+            <summary>
+            Predstavlja realni entitet Klase u vidu enumeratora.
+            </summary>
+        </member>
+        <member name="T:ParcelaService.Models.Enums.Kultura">
+            <summary>
+            Predstavlja realni entitet Kulture u vidu enumeratora.
+            </summary>
+        </member>
+        <member name="T:ParcelaService.Models.Enums.OblikSvojine">
+            <summary>
+            Predstavlja realni entitet OblikaSvojine u vidu enumeratora.
+            </summary>
+        </member>
+        <member name="T:ParcelaService.Models.Enums.Obradivost">
+            <summary>
+            Predstavlja realni entitet Obradivosti u vidu enumeratora.
+            </summary>
+        </member>
+        <member name="T:ParcelaService.Models.KvalitetZemljista">
+            <summary>
+            Predstavlja realni entitet kvaliteta zemljista.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.Models.KvalitetZemljista.KvalitetZemljistaId">
+            <summary>
+            Id kvalitet zemljista
+            </summary>
+        </member>
+        <member name="P:ParcelaService.Models.KvalitetZemljista.OznakaKvaliteta">
+            <summary>
+            Oznaka kvaliteta zemljista
+            </summary>
+        </member>
+        <member name="P:ParcelaService.Models.KvalitetZemljista.Opis">
+            <summary>
+            Opis kvaliteta zemljista
+            </summary>
+        </member>
+        <member name="T:ParcelaService.Models.Parcela">
+            <summary>
+            Predstavlja realni entitet parcele.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.Models.Parcela.ParcelaId">
+            <summary>
+            Id parcele
+            </summary>
+        </member>
+        <member name="P:ParcelaService.Models.Parcela.BrojParcele">
+            <summary>
+            Broj parcele
+            </summary>
+        </member>
+        <member name="P:ParcelaService.Models.Parcela.BrojListaNepokretnosti">
+            <summary>
+            Broj lista nepokretnosti
+            </summary>
+        </member>
+        <member name="P:ParcelaService.Models.Parcela.KatastarskaOpstinaId">
+            <summary>
+            Id katastarske opstine
+            </summary>
+        </member>
+        <member name="P:ParcelaService.Models.Parcela.Kultura">
+            <summary>
+            Kultura
+            </summary>
+        </member>
+        <member name="P:ParcelaService.Models.Parcela.Klasa">
+            <summary>
+            Klasa
+            </summary>
+        </member>
+        <member name="P:ParcelaService.Models.Parcela.Obradivost">
+            <summary>
+            Obradivost
+            </summary>
+        </member>
+        <member name="P:ParcelaService.Models.Parcela.ZasticenaZonaId">
+            <summary>
+            Strani kljuc zasticene zone
+            </summary>
+        </member>
+        <member name="P:ParcelaService.Models.Parcela.ZasticenaZona">
+            <summary>
+            Zasticena zona entitet
+            </summary>
+        </member>
+        <member name="P:ParcelaService.Models.Parcela.OblikSvojine">
+            <summary>
+            Oblik svojine
+            </summary>
+        </member>
+        <member name="P:ParcelaService.Models.Parcela.Odvodnjavanje">
+            <summary>
+            Odvodnjavanje
+            </summary>
+        </member>
+        <member name="P:ParcelaService.Models.Parcela.KulturaStvarnoStanje">
+            <summary>
+            Stvarno stanje kulture
+            </summary>
+        </member>
+        <member name="P:ParcelaService.Models.Parcela.KlasaStvarnoStanje">
+            <summary>
+            Stvarno stanje klase
+            </summary>
+        </member>
+        <member name="P:ParcelaService.Models.Parcela.ObradivostStvarnoStanje">
+            <summary>
+            Stvarno stanje obradivosti
+            </summary>
+        </member>
+        <member name="P:ParcelaService.Models.Parcela.ZasticenaZonaStvarnoStanje">
+            <summary>
+            Stvarno stanje zasticene zone
+            </summary>
+        </member>
+        <member name="P:ParcelaService.Models.Parcela.OdvodnjavanjeStvarnoStanje">
+            <summary>
+            Stvarno stanje odvodnjavanja
+            </summary>
+        </member>
+        <member name="P:ParcelaService.Models.Parcela.DeloviParcele">
+            <summary>
+            Lista delova parcele
+            </summary>
+        </member>
+        <member name="T:ParcelaService.Models.ZasticenaZona">
+            <summary>
+            Predstavlja realni entitet zasticene zone.
+            </summary>
+        </member>
+        <member name="P:ParcelaService.Models.ZasticenaZona.ZasticenaZonaId">
+            <summary>
+            Id zasticene zone
+            </summary>
+        </member>
+        <member name="P:ParcelaService.Models.ZasticenaZona.BrojZasticeneZone">
+            <summary>
+            Broj zasticene zone
+            </summary>
+        </member>
+        <member name="P:ParcelaService.Models.ZasticenaZona.DozvoljeniRadovi">
+            <summary>
+            Lista dozvoljenih radova
+            </summary>
+        </member>
+        <member name="T:ParcelaService.Profiles.DeoParceleProfile">
+            <summary>
+            Klasa koja omogucava mapiranje interne i eksterne reprezentacije podataka vezane za deo parcele.
+            </summary>
+        </member>
+        <member name="T:ParcelaService.Profiles.DozvoljeniRadProfile">
+            <summary>
+            Klasa koja omogucava mapiranje interne i eksterne reprezentacije podataka vezane za dozvoljeni rad.
+            </summary>
+        </member>
+        <member name="T:ParcelaService.Profiles.KvalitetZemljistaProfile">
+            <summary>
+            Klasa koja omogucava mapiranje interne i eksterne reprezentacije podataka vezane za kvalitet zemljista.
+            </summary>
+        </member>
+        <member name="T:ParcelaService.Profiles.ParcelaProfile">
+            <summary>
+            Klasa koja omogucava mapiranje interne i eksterne reprezentacije podataka vezane za parcele.
+            </summary>
+        </member>
+        <member name="T:ParcelaService.Profiles.ZasticenaZonaProfile">
+            <summary>
+            Klasa koja omogucava mapiranje interne i eksterne reprezentacije podataka vezane za zasticenu zonu.
+            </summary>
+        </member>
+    </members>
+</doc>
