@@ -75,12 +75,12 @@ namespace ParcelaService.Controllers
         }
 
         /// <summary>
-        /// Vraća sve delove parcele čiji je ID prosleđen
+        /// Vraća sve dozvoljene radove za id zasticene zone koji je prosledjen
         /// </summary>
-        /// <param name="zasticenaZonaId">ID parcele</param>
-        /// <returns>Lista delova parcele</returns>
-        /// <response code = "200">Vraća listu delova parcela</response>
-        /// <response code = "204">Ne postoji lista delova parcele</response>
+        /// <param name="zasticenaZonaId">ID zasticene zone.</param>
+        /// <returns>Lista dozvoljenih radova</returns>
+        /// <response code = "200">Vraća listu dozvoljenih radova</response>
+        /// <response code = "204">Ne postoji lista dozvoljenih radova</response>
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [HttpGet("DozvoljeniRad/{zasticenaZonaId}")]

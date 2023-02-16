@@ -51,7 +51,7 @@ namespace ParcelaService.Controllers
         }
 
         /// <summary>
-        /// Vrača dozvoljene radove po ID-ju
+        /// Vraca dozvoljene radove po ID-ju
         /// </summary>
         /// <param name="dozvoljeniRadId">ID dozvoljenog rada</param>
         /// <returns>Odgovarajući dozvoljeni rad</returns>
