@@ -9,12 +9,10 @@ namespace KatastarskaOpstinaService.Data
     public class KatastarskaOpstinaRepo : IKatastarskaOpstinaRepo
     {
         private readonly KatastarskaOpstinaDbContext _context;
-        private readonly IMapper _mapper;
 
-        public KatastarskaOpstinaRepo(KatastarskaOpstinaDbContext context, IMapper mapper)
+        public KatastarskaOpstinaRepo(KatastarskaOpstinaDbContext context)
         {
             _context = context;
-            _mapper = mapper;
         }
         public void Create(KatastarskaOpstina katastarskaOpstina)
         {

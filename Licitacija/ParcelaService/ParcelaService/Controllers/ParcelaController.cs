@@ -45,7 +45,7 @@ namespace ParcelaService.Controllers
         {
             Console.WriteLine("-->getting Percele");
             var parcele = _repository.GetAll(katastarskaOpstinaId);
-            if (parcele == null || parcele.Count() == 0)
+            if (parcele == null || parcele.Any())
             {
                 return NoContent();
             }
@@ -66,7 +66,7 @@ namespace ParcelaService.Controllers
         public ActionResult<IEnumerable<DeoParceleDto>> GetDeloveParcele(Guid parcelaId)
         {
             var deloviParcele = _repository.GetDeloveParcele(parcelaId);
-            if (deloviParcele == null || deloviParcele.Count() == 0)
+            if (deloviParcele == null || deloviParcele.Any())
             {
                 return NoContent();
             }

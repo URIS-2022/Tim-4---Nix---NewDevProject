@@ -13,12 +13,10 @@ namespace KatastarskaOpstinaService.SyncDataServices.http
 {
     public class HttpParcelaDataClient : IParcelaDataClient
     {
-        private readonly HttpClient _httpClient;
         private readonly IConfiguration _configuration;
 
-        public HttpParcelaDataClient(HttpClient httpClient, IConfiguration configuration)
+        public HttpParcelaDataClient(IConfiguration configuration)
         {
-            _httpClient = httpClient;
             _configuration = configuration;
         }
 
