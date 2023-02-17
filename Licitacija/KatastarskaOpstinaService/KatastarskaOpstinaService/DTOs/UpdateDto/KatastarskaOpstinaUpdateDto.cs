@@ -16,7 +16,7 @@ namespace KatastarskaOpstinaService.DTOs.UpdateDto
         /// <summary>
         /// Parcela
         /// </summary>
-        public List<ParcelaDto> Parcele { get; set; }
+        //public List<ParcelaDto> Parcele { get; set; }
         /// <summary>
         /// ID statuta opstine
         /// </summary>
