@@ -37,12 +37,7 @@ namespace ParcelaService
             //dodavanje konekcije na bazu.
             Console.WriteLine("--> Using sqlserv db");
             services.AddDbContext<ParcelaDbContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("ParcelaConnection")));
-            
-            /*
-            Console.WriteLine("--> Using Inmemory db");
-            services.AddDbContext<ParcelaDbContext>(opt => opt.UseInMemoryDatabase("InMem"));
-            */
-            
+                                    
             //dodavanje scopova.
             services.AddScoped<IDeoParceleRepo,DeoParceleRepo>();
             services.AddScoped<IDozvoljeniRadRepo,DozvoljeniRadRepo>();  

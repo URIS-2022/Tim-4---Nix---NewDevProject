@@ -73,7 +73,7 @@
         </member>
         <member name="M:ParcelaService.Controllers.DozvoljeniRadController.GetRadById(System.Guid)">
             <summary>
-            Vrača dozvoljene radove po ID-ju
+            Vraca dozvoljene radove po ID-ju
             </summary>
             <param name="dozvoljeniRadId">ID dozvoljenog rada</param>
             <returns>Odgovarajući dozvoljeni rad</returns>
@@ -266,12 +266,12 @@
         </member>
         <member name="M:ParcelaService.Controllers.ZasticenaZonaController.GetDozvoljeniRadovi(System.Guid)">
             <summary>
-            Vraća sve delove parcele čiji je ID prosleđen
+            Vraća sve dozvoljene radove za id zasticene zone koji je prosledjen
             </summary>
-            <param name="zasticenaZonaId">ID parcele</param>
-            <returns>Lista delova parcele</returns>
-            <response code = "200">Vraća listu delova parcela</response>
-            <response code = "204">Ne postoji lista delova parcele</response>
+            <param name="zasticenaZonaId">ID zasticene zone.</param>
+            <returns>Lista dozvoljenih radova</returns>
+            <response code = "200">Vraća listu dozvoljenih radova</response>
+            <response code = "204">Ne postoji lista dozvoljenih radova</response>
         </member>
         <member name="M:ParcelaService.Controllers.ZasticenaZonaController.CreateZasticenaZona(ParcelaService.DTOs.CreateDto.ZasticenaZonaCreateDto,System.String)">
             <summary>

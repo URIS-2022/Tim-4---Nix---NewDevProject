@@ -49,7 +49,7 @@ namespace KatastarskaOpstinaService.Controllers
             Console.WriteLine("-->getting katastarske opstine");
 
             var katastarskaOpstinaItems = _repository.GetAll();
-            if (katastarskaOpstinaItems ==null || katastarskaOpstinaItems.Count() == 0)
+            if (katastarskaOpstinaItems ==null || katastarskaOpstinaItems.Any())
             {
                 return NoContent();
             }

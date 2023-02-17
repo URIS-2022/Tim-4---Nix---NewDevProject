@@ -88,7 +88,7 @@ namespace ParcelaService.Controllers
         public ActionResult<IEnumerable<DozvoljeniRad>> GetDozvoljeniRadovi(Guid zasticenaZonaId)
         {
             var dozvoljeniRadovi = _repository.GetDozvoljeniRadovi(zasticenaZonaId);
-            if (dozvoljeniRadovi == null || dozvoljeniRadovi.Count() == 0)
+            if (dozvoljeniRadovi == null || dozvoljeniRadovi.Any())
             {
                 return NoContent();
             }
@@ -111,7 +111,7 @@ namespace ParcelaService.Controllers
         [HttpPost]
         public ActionResult<ZasticenaZonaDto> CreateZasticenaZona(ZasticenaZonaCreateDto zasticenaZonaCreateDto, [FromHeader(Name ="Authorization")] string key)
         {
-            //Console.WriteLine($"{key}");
+            
             //key je Bearer AnaMarija
             if (!_authHelper.Authorize(key))
             {
@@ -189,9 +189,6 @@ namespace ParcelaService.Controllers
         [HttpDelete("{zasticenaZonaId}")]
         public IActionResult Delete(Guid zasticenaZonaId, [FromHeader(Name = "Authorization")] string key)
         {
-            //Console.WriteLine($"{key} from kontroler");
-           // bool isAuthorized = _authHelper.Authorize(key);//false
-            //Console.WriteLine(isAuthorized+ "from controller");
             if (!_authHelper.Authorize(key))
             {
                 return StatusCode(StatusCodes.Status401Unauthorized, "Korisnik nije autorizovan!");

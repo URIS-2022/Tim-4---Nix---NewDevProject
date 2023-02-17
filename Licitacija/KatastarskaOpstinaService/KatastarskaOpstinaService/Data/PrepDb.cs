@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace KatastarskaOpstinaService.Data
 {
-    public class PrepDb
+    public static class PrepDb
     {
         public static void PrepPopulation(IApplicationBuilder app)
         {
