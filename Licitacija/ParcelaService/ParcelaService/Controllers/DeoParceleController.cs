@@ -64,7 +64,7 @@ namespace ParcelaService.Controllers
         public ActionResult<DeoParceleDto> GetDeoById(Guid deoParceleId)
         {
             DeoParcele deoParceleItem = _repository.GetById(deoParceleId);
-            Console.WriteLine(deoParceleItem.KvalitetZemljistaId);
+           
             if (deoParceleItem != null)
             {
                 Console.WriteLine(deoParceleItem.KvalitetZemljistaId);

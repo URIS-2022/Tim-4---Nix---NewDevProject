@@ -245,11 +245,6 @@
             Id katastarske opstine
             </summary>
         </member>
-        <member name="P:KatastarskaOpstinaService.DTOs.UpdateDto.KatastarskaOpstinaUpdateDto.Parcele">
-            <summary>
-            Parcela
-            </summary>
-        </member>
         <member name="P:KatastarskaOpstinaService.DTOs.UpdateDto.KatastarskaOpstinaUpdateDto.StatutOpstineId">
             <summary>
             ID statuta opstine
