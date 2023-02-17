@@ -49,7 +49,7 @@ namespace KatastarskaOpstinaService.Controllers
             Console.WriteLine("-->getting katastarske opstine");
 
             var katastarskaOpstinaItems = _repository.GetAll();
-            if (katastarskaOpstinaItems ==null || katastarskaOpstinaItems.Any())
+            if (katastarskaOpstinaItems ==null || katastarskaOpstinaItems.Count() == 0)
             {
                 return NoContent();
             }
@@ -77,6 +77,8 @@ namespace KatastarskaOpstinaService.Controllers
             var katastarskaOpstinaItem = _repository.GetById(katastarskaOpstinaId);
             if (katastarskaOpstinaItem != null)
             {
+                katastarskaOpstinaItem.Parcele = _parcelaDataClient.GetParcelaForKatastarskaOpstina(katastarskaOpstinaItem.KatastarskaOpstinaId).Result;
+                
                 return Ok(_mapper.Map<KatastarskaOpstinaDto>(katastarskaOpstinaItem));
             }
 
