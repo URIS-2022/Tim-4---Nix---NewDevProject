@@ -12,11 +12,7 @@ namespace KatastarskaOpstinaService.DTOs.UpdateDto
         /// Id katastarske opstine
         /// </summary>
         public Guid KatastarskaOpstinaId { get; set; }
-
-        /// <summary>
-        /// Parcela
-        /// </summary>
-        //public List<ParcelaDto> Parcele { get; set; }
+                
         /// <summary>
         /// ID statuta opstine
         /// </summary>
