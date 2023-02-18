@@ -1,0 +1,424 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JavnoNadmetanje</name>
+    </assembly>
+    <members>
+        <member name="M:JavnoNadmetanje.Auth.AuthHelper.Authorize(System.String)">
+            <summary>
+            Metoda za proveru prava pristupa
+            </summary>
+            <param name="key">Parametar koji se prosledjuje prilikom poziva zahteva, sluzi za autorizaciju.</param>
+            <returns></returns>
+        </member>
+        <member name="T:JavnoNadmetanje.Controllers.JavnoNadmetanjeController">
+            <summary>
+            u kontroleru se definisu sve CRUD operacije koje ce se vrsiti nad javnim nadmetanjem
+            </summary>
+        </member>
+        <member name="M:JavnoNadmetanje.Controllers.JavnoNadmetanjeController.#ctor(JavnoNadmetanje.Data.IJavnoNadmetanjeRepository,AutoMapper.IMapper,Microsoft.AspNetCore.Routing.LinkGenerator,JavnoNadmetanje.Auth.IAuthHelper)">
+            <summary>
+            deklarisanje klase
+            </summary>
+            <param name="javnoNadmetanjeRepository"></param>
+            <param name="mapper"></param>
+            <param name="linkGenerator"></param>
+            <param name="authHelper"></param>
+        </member>
+        <member name="M:JavnoNadmetanje.Controllers.JavnoNadmetanjeController.GetAllJavnaNadmetanja">
+            <summary>
+            Vraca sva javna nadmetanja
+            </summary>
+            <returns>Lista svih javnih nadmetanja </returns>
+            <response code = "200">Vraca listu javnih nadmetanja</response>
+            <response code = "204">Ne postoji lista javnih nadmetanja</response>
+        </member>
+        <member name="M:JavnoNadmetanje.Controllers.JavnoNadmetanjeController.GetJavnoNadmetanjeByID(System.Guid)">
+            <summary>
+            Vraca 1 javno nadmetanje sa prosledjenim id-jem
+            </summary>
+            <param name="javnoNadmetanjeID"> jedinstveno obelezje/kljuc javnog nadmetanja (Guid )</param>
+            <returns>Vraca trazeno javno nadmetanje</returns>
+            <response code = "200">Vraca traženo javno nadmetanje</response>
+            <response code = "404">Nije pronađeno traženo javno nadmetanje</response>
+        </member>
+        <member name="M:JavnoNadmetanje.Controllers.JavnoNadmetanjeController.CreateJavnoNadmetanje(JavnoNadmetanje.Dtos.JavnoNadmetanjeCreateDto,System.String)">
+            <summary>
+            Kreira novo javno nadmetanje
+            </summary>
+            <param name="javnoNadmetanje"> model javnog nadmetanja</param>
+            <param name="key"> ključ sa kojim se proverava autorizacija(key vrednost: Bearer LenkaSubotin)</param>
+            <returns>Potvrda o kreiranom javnom nadmetanju</returns>
+            <remarks>
+            Primer zahteva za kreiranje novog javnog nadmetanja \
+            POST /api/javnaNadmetanja \
+            { \
+             "Datum" : "2022-02-10", \
+             "VremePocetka" : "9:00:00", \
+             "VremeKraja" : "13:00:00", \
+             "PocetnaCenaPoHektaru" : 2000, \
+             "Izuzeto" : false, \
+             "Tip" : "JavnaLicitacija", \
+             "IzlicitiranaCena" : 1500, \
+             "PeriodZakupa" : 3, \
+             "BrojUcesnika : 25", \
+             "VisinaDopuneDepozita" : 500, \
+             "Krug" : 1, \
+             "Status" : "PrviKrug", \
+             "LicitacijaId" : "861e7d2e-268f-495f-8bd3-dbfb4f0594a4", \
+             "ParcelaId: : "35d3c2da-7e55-4730-a4ed-9f886e24e6f9", \
+             "KupacId" : "bc03a6fb-b322-4797-b6c4-0a899615f653" \
+            } 
+            </remarks>
+            <response code = "201">Vraca kreirano javno nadmetanje</response>
+            <response code = "401">Lice koje želi da izvrsi kreiranje javnog nadmetanja nije autorizovani korisnik</response>
+            <response code = "500">Doslo je do greske na serveru prilikom kreiranja javnog nadmetanja</response>
+        </member>
+        <member name="M:JavnoNadmetanje.Controllers.JavnoNadmetanjeController.UpdateJavnoNadmetanje(JavnoNadmetanje.Dtos.JavnoNadmetanjeUpdateDto,System.String)">
+            <summary>
+            Azuriranje samo dozvoljenih podataka definisanih u JavnoNadmetanjeUpdateDto
+            </summary>
+            <param name="javnoNadmetanje">dto sa podataka definisanih u JavnoNadmetanjeUpdateDto</param>
+            <param name="key"></param>
+            <returns>vraca ceo model javnog nadmetanja sa azuriranim podacima</returns>
+        </member>
+        <member name="M:JavnoNadmetanje.Controllers.JavnoNadmetanjeController.DeleteJavnoNadmetanje(System.Guid,System.String)">
+            <summary>
+            Brise javno nadmetanje na osnovu ID-ja
+            </summary>
+            <param name="javnoNadmetanjeID">ID javnog nadmetanja</param>
+            /// <param name="key"> ključ sa kojim se proverava autorizacija(key vrednost: Bearer LenkaSubotin)</param>
+            <returns>Status 204 (NoContent)</returns>
+            <response code="204">Javno nadmetanja uspesno obrisano</response>
+            <response code="401">Lice koje želi da izvrsi brisanje nije autorizovani korisnik</response>
+            <response code="404">Nije pronađeno javno nadmetanje za brisanje</response>
+            <response code="500">Doslo je do greske na serveru prilikom brisanja javnog nadmetanja</response>
+        </member>
+        <member name="M:JavnoNadmetanje.Controllers.JavnoNadmetanjeController.GetJavnoNadmetanjeOptions">
+            <summary>
+            Vraca informacije o opcijama koje je moguce izvrsiti za sva javna nadmetanja
+            </summary>
+            <returns>OK</returns>
+        </member>
+        <member name="T:JavnoNadmetanje.Data.IJavnoNadmetanjeRepository">
+            <summary>
+            intefejs javnog nadmetanja
+            </summary>
+        </member>
+        <member name="T:JavnoNadmetanje.Data.JavnoNadmetanjeContext">
+            <summary>
+            klasa za definisanje konteksta javnog nadmetanja 
+            </summary>
+        </member>
+        <member name="M:JavnoNadmetanje.Data.JavnoNadmetanjeContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions)">
+            <summary>
+            ovde ne upisujemo nista
+            </summary>
+            <param name="options"></param>
+        </member>
+        <member name="P:JavnoNadmetanje.Data.JavnoNadmetanjeContext.JavnaNadmetanja">
+            <summary>
+            setovanje i uzimanje baze sa definisanim modelom javnog nadmetanja
+            </summary>
+        </member>
+        <member name="T:JavnoNadmetanje.Data.JavnoNadmetanjeRepository">
+            <summary>
+            repozitorijum javnog nadmetanja koji je prosisern njegovim interfejsom
+            </summary>
+        </member>
+        <member name="M:JavnoNadmetanje.Data.JavnoNadmetanjeRepository.#ctor(JavnoNadmetanje.Data.JavnoNadmetanjeContext)">
+            <summary>
+            deklarisanje klase
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:JavnoNadmetanje.Data.JavnoNadmetanjeRepository.GetAllJavnaNadmetanja">
+            <summary>
+            funkcija koja vraca sva javna nadmetanja u bazi
+            </summary>
+            <returns>lista svih javnih nadmetanja</returns>
+        </member>
+        <member name="M:JavnoNadmetanje.Data.JavnoNadmetanjeRepository.GetJavnoNadmetanjeById(System.Guid)">
+            <summary>
+            funkcija koja u zavisnosti od prosledjenog id-a ispisuje odredjenjo javno nadmetanje
+            </summary>
+            <param name="javnoNadmetanjeID"></param>
+            <returns>javno nadmetanje sa unetim id-jem</returns>
+        </member>
+        <member name="M:JavnoNadmetanje.Data.JavnoNadmetanjeRepository.CreateJavnoNadmetanje(JavnoNadmetanje.Models.JavnoNadmetanjeModel)">
+            <summary>
+            funkcija kojom kreiramo novo javno nadmetanje
+            </summary>
+            <param name="javnoNadmetanje"></param> 
+            <returns></returns>
+        </member>
+        <member name="M:JavnoNadmetanje.Data.JavnoNadmetanjeRepository.DeleteJavnoNadmetanje(System.Guid)">
+            <summary>
+            funkcija kojom brisemo postojece javno nadmetanje u odnosu na prosledjeni id
+            </summary>
+            <param name="javnoNadmetanjeID"></param>
+        </member>
+        <member name="M:JavnoNadmetanje.Data.JavnoNadmetanjeRepository.UpdateJavnoNadmetanje(JavnoNadmetanje.Models.JavnoNadmetanjeModel)">
+            <summary>
+            funkcija kojom azuriramo neko postojece javno nadmetanje, ali ovde nismo nista deklarisali samo u controlleru
+            </summary>
+            <param name="javnoNadmetanje"></param>
+        </member>
+        <member name="M:JavnoNadmetanje.Data.JavnoNadmetanjeRepository.SaveChanges">
+            <summary>
+            cuva sve promene
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:JavnoNadmetanje.Data.PrepDB">
+            <summary>
+            klasa kojom punim tabelu sa 2 nasumicno definisana primera
+            </summary>
+        </member>
+        <member name="M:JavnoNadmetanje.Data.PrepDB.PrepPopulation(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            poziva SeadData() funkciju
+            </summary>
+            <param name="app"></param>
+        </member>
+        <member name="M:JavnoNadmetanje.Data.PrepDB.SeedData(JavnoNadmetanje.Data.JavnoNadmetanjeContext)">
+            <summary>
+            funkcija gde definisemo ta 2 primera
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:JavnoNadmetanje.Dtos.JavnoNadmetanjeCreateDto">
+            <summary>
+            klasa javnog nadmetanja koju koristimo za kreiranje novog javnog nadmetanja
+            </summary>
+        </member>
+        <member name="T:JavnoNadmetanje.Dtos.JavnoNadmetanjeReadDto">
+            <summary>
+            klasa javnog nadmetanja kojom iscitavamo sve podatke koje zelimo
+            </summary>
+        </member>
+        <member name="T:JavnoNadmetanje.Dtos.JavnoNadmetanjeUpdateDto">
+            <summary>
+            klasa koja sadrzi samo elemente koje je dozvoljeno azurirati i menjati kada se definise javno nadmetanje
+            </summary>
+        </member>
+        <member name="T:JavnoNadmetanje.Enums.KatastarskeOpstine">
+            <summary>
+            11 mogucih izbor razlicitih delova opstine Subotica
+            oni su u sistemu obelezeni brojevima od 0 do 10
+            0 - Cantavir
+            1 - Backi Vinogradi
+            2 - Bikovo
+            3 - Djudjin
+            4 - Zednik
+            5 - Tavankut
+            6 - Bajmok
+            7 - Donji Grad
+            8 - Stari Grad
+            9 - Novi Grad
+            10 - Palic
+            </summary>
+        </member>
+        <member name="T:JavnoNadmetanje.Enums.StatusJavnogNadmetanja">
+            <summary>
+            3 moguca izbora statusa javnog nadmetanja obelezeni od 0 do 2 
+            0 - Prvi krug
+            1 - Drugi krug sa starim uslovima
+            2 - Drugi krug sa novim uslovima
+            </summary>
+        </member>
+        <member name="T:JavnoNadmetanje.Enums.TipJavnogNadmetanja">
+            <summary>
+            2 moguca izbora tipa javnog nadmetanja obelezena 0 i 1
+            0 - Javna licitacija
+            1 - Otvaranje zatvorenih ponuda
+            </summary>
+        </member>
+        <member name="T:JavnoNadmetanje.Logger.LoggerService">
+            <summary>
+            loger servis - komunikacija u logu 
+            </summary>
+        </member>
+        <member name="T:JavnoNadmetanje.Logger.LoggerVO">
+            <summary>
+            objekti logera
+            </summary>
+        </member>
+        <member name="P:JavnoNadmetanje.Logger.LoggerVO.OpisAktivnosti">
+            <summary>
+            Opis aktivnosti
+            </summary>
+        </member>
+        <member name="P:JavnoNadmetanje.Logger.LoggerVO.Datum">
+            <summary>
+            Datum
+            </summary>
+        </member>
+        <member name="T:JavnoNadmetanje.Models.JavnoNadmetanjeModel">
+            <summary>
+            klasa u kojoj modelujemo javno nadmetanje
+            </summary>
+        </member>
+        <member name="P:JavnoNadmetanje.Models.JavnoNadmetanjeModel.JavnoNadmetanjeID">
+            <summary>
+            primarni kljuc/id javnog nadmetanja 
+            </summary>
+        </member>
+        <member name="P:JavnoNadmetanje.Models.JavnoNadmetanjeModel.DatumNadmetanja">
+            <summary>
+            datum dana kada se desava javno nadmetanje
+            </summary>
+        </member>
+        <member name="P:JavnoNadmetanje.Models.JavnoNadmetanjeModel.VremePocetka">
+            <summary>
+            datum i vreme pocetka javnog nadmetnaja
+            </summary>
+        </member>
+        <member name="P:JavnoNadmetanje.Models.JavnoNadmetanjeModel.VremeKraja">
+            <summary>
+            datum i vreme kraja javnog nadmetnaja
+            </summary>
+        </member>
+        <member name="P:JavnoNadmetanje.Models.JavnoNadmetanjeModel.Izuzeto">
+            <summary>
+            ako je ovaj bool:
+            1. true - javno nadmetanje je otkazano
+            2. false - javno nadmetanje ce se odrzati po planu
+            </summary>
+        </member>
+        <member name="P:JavnoNadmetanje.Models.JavnoNadmetanjeModel.PocetnaCenaPoHektaru">
+            <summary>
+            celobrojna vrednost predlozene pocetne cene po hektaru na javnom nadmetanju
+            </summary>
+        </member>
+        <member name="P:JavnoNadmetanje.Models.JavnoNadmetanjeModel.IzlicitiranaCena">
+            <summary>
+            celobrojna vrednost izlicitirane cene za odredju parcelu za koju se vrsi javno nadmetanje
+            </summary>
+        </member>
+        <member name="P:JavnoNadmetanje.Models.JavnoNadmetanjeModel.PeriodZakupa">
+            <summary>
+            oznacava na koliko dugo se zakupljuje parcela (1 godina, 2 godine...)
+            </summary>
+        </member>
+        <member name="P:JavnoNadmetanje.Models.JavnoNadmetanjeModel.BrojUcesnika">
+            <summary>
+            broj ucesnika koji ucestvuje na javnom nadmetanju
+            </summary>
+        </member>
+        <member name="P:JavnoNadmetanje.Models.JavnoNadmetanjeModel.VisinaDopuneDepozita">
+            <summary>
+            visina dopune depozita (ako postoji)
+            </summary>
+        </member>
+        <member name="P:JavnoNadmetanje.Models.JavnoNadmetanjeModel.Krug">
+            <summary>
+            krug ili etapa javnog nadmetanja
+            ako je prvi krug neuspesan, onda se otvara 2. krug nadmetanja
+            </summary>
+        </member>
+        <member name="P:JavnoNadmetanje.Models.JavnoNadmetanjeModel.Tip">
+            <summary>
+            odabir tipa javnog nadmetanja
+            </summary>
+        </member>
+        <member name="P:JavnoNadmetanje.Models.JavnoNadmetanjeModel.Status">
+            <summary>
+            odabir statusa javnog nadmetanja
+            </summary>
+        </member>
+        <member name="P:JavnoNadmetanje.Models.JavnoNadmetanjeModel.KatastarskaOpstina">
+            <summary>
+            odabir katastarkse opstine u kojoj se nalazi parcela 
+            </summary>
+        </member>
+        <member name="P:JavnoNadmetanje.Models.JavnoNadmetanjeModel.KupacID">
+            <summary>
+            strani kljuc koji naznacaju na entite kupac
+            </summary>
+        </member>
+        <member name="P:JavnoNadmetanje.Models.JavnoNadmetanjeModel.AdresaID">
+            <summary>
+            strani kljuc koji naznacaju na tabelu adresa
+            </summary>
+        </member>
+        <member name="P:JavnoNadmetanje.Models.JavnoNadmetanjeModel.PrijavljeniKupci">
+            <summary>
+            broj prijavljenih ljudi za javno nadmetanje
+            </summary>
+        </member>
+        <member name="P:JavnoNadmetanje.Models.JavnoNadmetanjeModel.LicitacijaID">
+            <summary>
+            strani kljuc koji naznacaju na tabelu licitacija
+            </summary>
+        </member>
+        <member name="P:JavnoNadmetanje.Models.JavnoNadmetanjeModel.ParcelaID">
+            <summary>
+            strani kljuc koji naznacava na tabelu parcela
+            </summary>
+        </member>
+        <member name="T:JavnoNadmetanje.Profiles.JavnoNadmetanjeProfile">
+            <summary>
+            klasa profila javnog nadmetanja
+            </summary>
+        </member>
+        <member name="M:JavnoNadmetanje.Profiles.JavnoNadmetanjeProfile.#ctor">
+            <summary>
+            Ovde se kreiraju sva moguca mapiranja koja mozemo izvrsiti sa CRUD operacijama
+            </summary>
+        </member>
+        <member name="T:JavnoNadmetanje.Program">
+            <summary>
+            2. osnovna klasa koju ne menjamo u odnosu od onog sto se izgenerise kad se napravi projekat
+            </summary>
+        </member>
+        <member name="M:JavnoNadmetanje.Program.Main(System.String[])">
+            <summary>
+            main funkcija
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:JavnoNadmetanje.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            ona pokrece startup klasu
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JavnoNadmetanje.Startup">
+            <summary>
+            Osnovna klasa u kojoj se nalaze sve potrebe konfiguracije i klasa koja se pokrece pri bildu
+            </summary>
+        </member>
+        <member name="P:JavnoNadmetanje.Startup.Configuration">
+            <summary>
+            instanca od predefinisanog sistemskog interfejsa
+            </summary>
+        </member>
+        <member name="F:JavnoNadmetanje.Startup._env">
+            <summary>
+            odnosi se na komunikaciju sa web-om
+            </summary>
+        </member>
+        <member name="M:JavnoNadmetanje.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            Deklaracija Startup klase
+            </summary>
+            <param name="configuration"></param> naznacava interfejs Configruation
+            <param name="env"></param> komunicira sa web host-om
+        </member>
+        <member name="M:JavnoNadmetanje.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            void funkcija u kojoj konfigurisemo sta sve nas servis radi
+            </summary>
+            <param name="services"></param> naznaka za servis
+        </member>
+        <member name="M:JavnoNadmetanje.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            druga funkcija koja je zaduzena za konfiguraciju
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+    </members>
+</doc>
