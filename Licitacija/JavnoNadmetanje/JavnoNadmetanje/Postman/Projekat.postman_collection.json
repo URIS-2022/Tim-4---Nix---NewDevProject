@@ -1,0 +1,118 @@
+{
+	"info": {
+		"_postman_id": "615c5886-ea2c-4ec9-8878-ec1ca9f880e0",
+		"name": "Projekat",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17370845"
+	},
+	"item": [
+		{
+			"name": "getAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5002/api/javnoNadmetanje",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5002",
+					"path": [
+						"api",
+						"javnoNadmetanje"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5002/api/javnoNadmetanje/6a411c13-a195-48f7-8dbd-67596c3974c0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5002",
+					"path": [
+						"api",
+						"javnoNadmetanje",
+						"6a411c13-a195-48f7-8dbd-67596c3974c0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"datumNadmetanja\": \"2022-02-10T00:00:00\",\r\n\"vremePocetka\": \"2023-02-17T09:00:00\",\r\n\"vremeKraja\": \"2023-02-17T13:00:00\",\r\n\"izuzeto\": true,\r\n\"pocetnaCenaPoHektaru\": 1000,\r\n\"izlicitiranaCena\": 1500,\r\n\"periodZakupa\": 3,\r\n\"brojUcesnika\": 25,\r\n\"visinaDopuneDepozita\": 500,\r\n\"krug\": 1,\r\n\"tip\": 0,\r\n\"status\": 0,\r\n\"katastarskaOpstina\": 10,\r\n\"prijavljeniKupci\": 15\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"javnoNadmetanjeID\": \"cb4ecd75-be98-406d-9fb4-e98b3b9a2397\",\r\n    \"datumNadmetanja\": \"2022-01-10T00:00:00\",\r\n    \"vremePocetka\": \"2023-01-17T09:00:00\",\r\n    \"vremeKraja\": \"2023-01-17T13:00:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5002/api/javnoNadmetanje",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5002",
+					"path": [
+						"api",
+						"javnoNadmetanje"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5002/api/javnoNadmetanje/22ff12c5-0272-49ff-b768-1f7d024f364b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5002",
+					"path": [
+						"api",
+						"javnoNadmetanje",
+						"22ff12c5-0272-49ff-b768-1f7d024f364b"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JavnoNadmetanje</name>
+    </assembly>
+    <members>
+        <member name="M:JavnoNadmetanje.Auth.AuthHelper.Authorize(System.String)">
+            <summary>
+            Metoda za proveru prava pristupa
+            </summary>
+            <param name="key">Parametar koji se prosledjuje prilikom poziva zahteva, sluzi za autorizaciju.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JavnoNadmetanje.Controllers.JavnoNadmetanjeController.GetAllJavnaNadmetanja">
+            <summary>
+            Vraca sva javna nadmetanja
+            </summary>
+            <returns>Lista svih javnih nadmetanja </returns>
+            <response code = "200">Vraća listu javnih nadmetanja</response>
+            <response code = "204">Ne postoji lista javnih nadmetanja</response>
+        </member>
+        <member name="M:JavnoNadmetanje.Controllers.JavnoNadmetanjeController.GetJavnoNadmetanjeByID(System.Guid)">
+            <summary>
+            Vraca 1 javno nadmetanje sa prosledjenim id-jem
+            </summary>
+            <param name="javnoNadmetanjeID"> jedinstveno obelezje/kljuc javnog nadmetanja (Guid )</param>
+            <returns>Vraca 1 javno nadmetanje</returns>
+        </member>
+    </members>
+</doc>
