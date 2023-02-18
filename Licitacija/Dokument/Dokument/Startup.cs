@@ -45,7 +45,7 @@ namespace Dokument
             services.AddScoped<IAuthHelper, AuthHelper>();
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-            //services.AddDbContext<AppDbContext>(opt => opt.UseInMemoryDatabase("InMem"));
+         
 
             services.AddControllersWithViews()
                 .AddJsonOptions(options =>

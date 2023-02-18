@@ -48,7 +48,7 @@ namespace Korisnici.Data
                         Prezime = "Zivkucin",
                         KorisnickoIme = "zivkucinana",
                         Lozinka = "ana123",
-                        TipKorisnika = TipKorisnikaEnum.Tehnicki_sekretar
+                        TipKorisnika = TipKorisnika.Tehnicki_sekretar
                     },
                     new KorisnikEntity()
                     {
@@ -57,12 +57,12 @@ namespace Korisnici.Data
                         Prezime = "Zoric",
                         KorisnickoIme = "zorickatarina",
                         Lozinka = "katarina123",
-                        TipKorisnika = TipKorisnikaEnum.Menadzer
+                        TipKorisnika = TipKorisnika.Menadzer
                     }
 
                     );
                 context.SaveChanges();
-     ; 
+     
             }
             else
             {

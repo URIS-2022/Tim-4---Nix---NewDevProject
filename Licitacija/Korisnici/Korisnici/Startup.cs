@@ -51,7 +51,7 @@ namespace Korisnici
                 options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddScoped<IKorisnikRepo, KorisnikRepo>();
-            //services.AddDbContext<AppDbContext>(opt => opt.UseInMemoryDatabase("InMem"));
+            
             services.AddControllers();
             services.AddSwaggerGen(setupAction =>
             {

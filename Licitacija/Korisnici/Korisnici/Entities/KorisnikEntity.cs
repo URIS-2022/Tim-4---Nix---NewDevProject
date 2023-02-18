@@ -38,6 +38,6 @@ namespace Korisnici.Entities
         /// <summary>
         /// Tip kojem korisnik moze pripadati
         /// </summary>
-        public TipKorisnikaEnum TipKorisnika { get; set; }
+        public TipKorisnika TipKorisnika { get; set; }
     }
 }

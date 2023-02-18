@@ -3,7 +3,7 @@
     /// <summary>
     /// Entitet status dokumenta koji je predstavljen enumeratorom
     /// </summary>
-    public enum StatusDokumentaEnum
+    public enum StatusDokumenta
     {
         /// <summary>
         /// Status dokumenta usvojen

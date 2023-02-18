@@ -36,7 +36,7 @@ namespace Dokument.Models.Dokument
         /// <summary>
         /// Status dokumenta
         /// </summary>
-        public StatusDokumentaEnum StatusDokumenta { get; set; }
+        public StatusDokumenta StatusDokumenta { get; set; }
 
         /// /// <summary>
         /// Identifikaciona oznaka verzije dokumenta

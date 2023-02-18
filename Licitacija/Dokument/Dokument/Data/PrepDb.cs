@@ -50,7 +50,7 @@ namespace Dokument.Data
                         DatumDonosenjaDokumenta = DateTime.Parse("2020-11-17T09:00:00"),
                         Sablon = "123456",
                         VerzijaDokumentaID=1,
-                        StatusDokumenta = StatusDokumentaEnum.Otvoren
+                        StatusDokumenta = StatusDokumenta.Otvoren
 
 
                     },
@@ -62,7 +62,7 @@ namespace Dokument.Data
                         DatumDonosenjaDokumenta = DateTime.Parse("2020-11-17T09:00:00"),
                         Sablon = "789123",        
                         VerzijaDokumentaID=2,
-                        StatusDokumenta = StatusDokumentaEnum.Odbijen
+                        StatusDokumenta = StatusDokumenta.Odbijen
                     }
 
                     );
@@ -121,7 +121,7 @@ namespace Dokument.Data
                         
                         JavnoNadmetanjeID = Guid.Parse("CFD7FA84-8A27-4119-B6DB-5CFC1B0C94E1"),
                         DokumentID = 1,
-                        TipGarancije = TipGarancijeEnum.Garancija_nekretninom,
+                        TipGarancije = TipGarancije.Garancija_nekretninom,
                         KupacID = Guid.Parse("CFD7FA84-8A27-4119-B6DB-5CFC1B0C94E1"),
                         RokDospeca = 2,
                         ZavodniBroj = " 345.12",
@@ -137,7 +137,7 @@ namespace Dokument.Data
                         
                         JavnoNadmetanjeID = Guid.Parse("CFD7FA84-8A27-4119-B6DB-5CFC1B0C94E1"),
                         DokumentID = 4,
-                        TipGarancije = TipGarancijeEnum.Zirantska,
+                        TipGarancije = TipGarancije.Zirantska,
                         KupacID = Guid.Parse("CFD7FA84-8A27-4119-B6DB-5CFC1B0C94E1"),
                         RokDospeca = 10,
                         ZavodniBroj = " 35JKP",

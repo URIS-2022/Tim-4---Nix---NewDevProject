@@ -31,6 +31,6 @@ namespace Korisnici.Models.Korisnik
         /// Naziv tipa korisnika(Operater, Superuser...)
         /// </summary>
 
-        public TipKorisnikaEnum TipKorisnika { get; set; }
+        public TipKorisnika TipKorisnika { get; set; }
     }
 }
