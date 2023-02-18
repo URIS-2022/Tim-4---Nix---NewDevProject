@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\AnaMarija LAP\\Desktop\\uris3\\Tim-4---Nix---NewDevProject\\Licitacija\\ParcelaService\\ParcelaService\\ParcelaService.csproj": {}
+    "C:\\Users\\AnaMarija LAP\\Desktop\\uris glavni trenutno\\Tim-4---Nix---NewDevProject\\Licitacija\\ParcelaService\\ParcelaService\\ParcelaService.csproj": {}
   },
   "projects": {
-    "C:\\Users\\AnaMarija LAP\\Desktop\\uris3\\Tim-4---Nix---NewDevProject\\Licitacija\\ParcelaService\\ParcelaService\\ParcelaService.csproj": {
+    "C:\\Users\\AnaMarija LAP\\Desktop\\uris glavni trenutno\\Tim-4---Nix---NewDevProject\\Licitacija\\ParcelaService\\ParcelaService\\ParcelaService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\AnaMarija LAP\\Desktop\\uris3\\Tim-4---Nix---NewDevProject\\Licitacija\\ParcelaService\\ParcelaService\\ParcelaService.csproj",
+        "projectUniqueName": "C:\\Users\\AnaMarija LAP\\Desktop\\uris glavni trenutno\\Tim-4---Nix---NewDevProject\\Licitacija\\ParcelaService\\ParcelaService\\ParcelaService.csproj",
         "projectName": "ParcelaService",
-        "projectPath": "C:\\Users\\AnaMarija LAP\\Desktop\\uris3\\Tim-4---Nix---NewDevProject\\Licitacija\\ParcelaService\\ParcelaService\\ParcelaService.csproj",
+        "projectPath": "C:\\Users\\AnaMarija LAP\\Desktop\\uris glavni trenutno\\Tim-4---Nix---NewDevProject\\Licitacija\\ParcelaService\\ParcelaService\\ParcelaService.csproj",
         "packagesPath": "C:\\Users\\AnaMarija LAP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\AnaMarija LAP\\Desktop\\uris3\\Tim-4---Nix---NewDevProject\\Licitacija\\ParcelaService\\ParcelaService\\obj\\",
+        "outputPath": "C:\\Users\\AnaMarija LAP\\Desktop\\uris glavni trenutno\\Tim-4---Nix---NewDevProject\\Licitacija\\ParcelaService\\ParcelaService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

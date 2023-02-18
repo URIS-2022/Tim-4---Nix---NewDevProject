@@ -1,0 +1,218 @@
+{
+  "Routes": [
+    //Deo Parcele Api
+    {
+      "UpstreamPathTemplate": "/api/DeoParcele",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Options" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5000
+        }
+      ],
+      "DownstreamPathTemplate": "/api/DeoParcele"
+    },
+    {
+      "UpstreamPathTemplate": "/api/DeoParcele/{deoParceleId}",
+      "UpstreamHttpMethod": [ "Get", "Delete" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5000
+        }
+      ],
+      "DownstreamPathTemplate": "/api/DeoParcele/{deoParceleId}"
+    },
+    //Dozvoljeni Rad api
+    {
+      "UpstreamPathTemplate": "/api/DozvoljeniRad",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Options" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5000
+        }
+      ],
+      "DownstreamPathTemplate": "/api/DozvoljeniRad"
+    },
+    {
+      "UpstreamPathTemplate": "/api/DozvoljeniRad/{dozvoljeniRadId}",
+      "UpstreamHttpMethod": [ "Get", "Delete" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5000
+        }
+      ],
+      "DownstreamPathTemplate": "/api/DozvoljeniRad/{dozvoljeniRadId}"
+    },
+    //Kvalitet zemljista api
+    {
+      "UpstreamPathTemplate": "/api/KvalitetZemljista",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Options" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5000
+        }
+      ],
+      "DownstreamPathTemplate": "/api/KvalitetZemljista"
+    },
+    {
+      "UpstreamPathTemplate": "/api/KvalitetZemljista/{kvalitetZemljistaId}",
+      "UpstreamHttpMethod": [ "Get", "Delete" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5000
+        }
+      ],
+      "DownstreamPathTemplate": "/api/KvalitetZemljista/{kvalitetZemljistaId}"
+    },
+    //Parcela api
+    {
+      "UpstreamPathTemplate": "/api/Parcela",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Options" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5000
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Parcela"
+    },
+    {
+      "UpstreamPathTemplate": "/api/Parcela/{parcelaId}",
+      "UpstreamHttpMethod": [ "Get", "Delete" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5000
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Parcela/{parcelaId}"
+    },
+    {
+      "UpstreamPathTemplate": "/api/Parcela/DeloviParcele/{parcelaId}",
+      "UpstreamHttpMethod": [ "Get" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5000
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Parcela/DeloviParcele/{parcelaId}"
+    },
+    //Zasticena zona api
+    {
+      "UpstreamPathTemplate": "/api/ZasticenaZona",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Options" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5000
+        }
+      ],
+      "DownstreamPathTemplate": "/api/ZasticenaZona"
+    },
+    {
+      "UpstreamPathTemplate": "/api/ZasticenaZona/{zasticenaZonaId}",
+      "UpstreamHttpMethod": [ "Get", "Delete" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5000
+        }
+      ],
+      "DownstreamPathTemplate": "/api/ZasticenaZona/{zasticenaZonaId}"
+    },
+    {
+      "UpstreamPathTemplate": "/api/ZasticenaZona/DozvoljeniRad/{zasticenaZonaId}",
+      "UpstreamHttpMethod": [ "Get" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5000
+        }
+      ],
+      "DownstreamPathTemplate": "/api/ZasticenaZona/DozvoljeniRad/{zasticenaZonaId}"
+    },
+    // katastarska opstina api
+    {
+      "DownstreamPathTemplate": "/api/katastarskaOpstina",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 6000
+        }
+      ],
+      "UpstreamPathTemplate": "/api/katastarskaOpstina",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Options" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/katastarskaOpstina/{katastarskaOpstinaId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 6000
+        }
+      ],
+      "UpstreamPathTemplate": "/api/katastarskaOpstina/{katastarskaOpstinaId}",
+      "UpstreamHttpMethod": [ "Get", "Delete" ]
+    },
+    //statut opstine api
+    {
+      "DownstreamPathTemplate": "/api/statutOpstine",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 6000
+        }
+      ],
+      "UpstreamPathTemplate": "/api/statutOpstine",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Options" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/statutOpstine/{statutOpstineId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 6000
+        }
+      ],
+      "UpstreamPathTemplate": "/api/statutOpstine/{statutOpstineId}",
+      "UpstreamHttpMethod": [ "Get", "Delete" ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:5555"
+  }
+}

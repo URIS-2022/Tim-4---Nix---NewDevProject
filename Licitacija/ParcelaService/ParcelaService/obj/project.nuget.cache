@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WSAVEow9MA5pC5wyiZm1Xl0hUiz+01LAhfRhA7fiiC/F7wmDQMAOS80jFryaaQXSzXmtiPQsHbQYVqYIpRmzHg==",
+  "dgSpecHash": "BeGQj4nf7nQaalz0D6mFnc3tBF4KNm1Xacb3xAnI6d6tWXYf/AyXtDDu69mxtqgcAK6WzKFOxr9P0ZvnazRNIQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\AnaMarija LAP\\Desktop\\uris3\\Tim-4---Nix---NewDevProject\\Licitacija\\ParcelaService\\ParcelaService\\ParcelaService.csproj",
+  "projectFilePath": "C:\\Users\\AnaMarija LAP\\Desktop\\uris glavni trenutno\\Tim-4---Nix---NewDevProject\\Licitacija\\ParcelaService\\ParcelaService\\ParcelaService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\AnaMarija LAP\\.nuget\\packages\\automapper\\10.0.0\\automapper.10.0.0.nupkg.sha512",
     "C:\\Users\\AnaMarija LAP\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.0.1\\automapper.extensions.microsoft.dependencyinjection.8.0.1.nupkg.sha512",
