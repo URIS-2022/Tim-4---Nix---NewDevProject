@@ -8,6 +8,7 @@ namespace ZalbaService.Data
 {
     public interface IZalbaRep
     {
+        //Interfejs za repozitorijum zalba
         bool SaveChanges();
 
         IEnumerable<Zalba> GetAllZalbe();
