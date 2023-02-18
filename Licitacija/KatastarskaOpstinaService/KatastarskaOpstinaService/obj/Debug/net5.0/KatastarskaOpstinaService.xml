@@ -69,6 +69,23 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:KatastarskaOpstinaService.Controllers.StatutOpstineController.GetAll">
+            <summary>
+            Vraca sve statute opstina
+            </summary>
+            <returns>Lista statuta opstina</returns>
+            <response code= "200">Vraca listu statuta opstina</response>
+            <response code= "204">Ne postoji nijedan statut opstine</response>
+        </member>
+        <member name="M:KatastarskaOpstinaService.Controllers.StatutOpstineController.GetStatutById(System.Guid)">
+            <summary>
+            Vraca statut opstine po ID-u
+            </summary>
+            <param name="statutOpstineId">ID statuta opstine</param>
+            <returns>Odgovarajuci statut opstine</returns>
+            <response code= "200">Vraca trazeni statut opstine</response>
+            <response code= "204">Nije pronadjen trazeni statut opstine</response>
+        </member>
         <member name="M:KatastarskaOpstinaService.Controllers.StatutOpstineController.Create(KatastarskaOpstinaService.DTOs.CreationDto.StatutOpstineCreationDto,System.String)">
             <summary>
             Kreiranje novog statuta opstine
