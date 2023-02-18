@@ -45,7 +45,7 @@ jobs:
           .\.sonar\scanner\dotnet-sonarscanner begin /k:"URIS-2022_Tim-4---Nix---NewDevProject" /o:"uris-2022" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
           dotnet publish Licitacija/KatastarskaOpstinaService/KatastarskaOpstinaService.sln -c Debug -o out
           dotnet publish Licitacija/ParcelaService/ParcelaService.sln -c Debug -o out
-          dotnet publish Licitacija/Korisnici/KorisniciService.sln -c Debug -o out
-          dotnet publish Licitacija/Dokument/DokumentService.sln -c Debug -o out
+          dotnet publish Licitacija/Korisnici/Korisnici.sln -c Debug -o out
+          dotnet publish Licitacija/Dokument/Dokument.sln -c Debug -o out
           dotnet build
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
