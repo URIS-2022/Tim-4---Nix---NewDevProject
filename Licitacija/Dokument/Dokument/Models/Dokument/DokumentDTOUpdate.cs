@@ -3,6 +3,9 @@ using System;
 
 namespace Dokument.Models.Dokument
 {
+    /// <summary>
+    /// Predstavlja model dokumenta za izmenu
+    /// </summary>
     public class DokumentDTOUpdate
     {
         /// <summary>
@@ -33,7 +36,7 @@ namespace Dokument.Models.Dokument
         /// <summary>
         /// Status dokumenta
         /// </summary>
-        public StatusDokumentaEnum StatusDokumenta { get; set; }
+        public StatusDokumenta StatusDokumenta { get; set; }
 
         /// <summary>
         /// Identifikaciona oznaka verzije dokumenta

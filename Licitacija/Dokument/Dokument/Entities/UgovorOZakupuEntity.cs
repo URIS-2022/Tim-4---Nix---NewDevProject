@@ -36,7 +36,7 @@ namespace Dokument.Entities
         /// <summary>
         /// Tip garancije za ugovor o zakupu
         /// </summary>
-        public TipGarancijeEnum TipGarancije { get; set; }
+        public TipGarancije TipGarancije { get; set; }
 
         /// <summary>
         /// Identifikaciona oznaka kupca (strani kljuc)

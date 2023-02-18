@@ -114,8 +114,8 @@ namespace Dokument.Controllers
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [HttpDelete("{VerzijaID}")]
-        public IActionResult DeleteVerzija(Guid VerzijaID, [FromHeader(Name = "Authorization")] string key)
+        [HttpDelete("{VerzijaDokumentaID}")]
+        public IActionResult DeleteVerzija(Guid VerzijaDokumentaID, [FromHeader(Name = "Authorization")] string key)
         {
             if (!_authHelper.Authorize(key))
             {
@@ -123,7 +123,7 @@ namespace Dokument.Controllers
             }
             try
             {
-                var ver = _repository.GetVerzijaById(VerzijaID);
+                var ver = _repository.GetVerzijaById(VerzijaDokumentaID);
                 if (ver == null)
                 {
                     return NotFound();

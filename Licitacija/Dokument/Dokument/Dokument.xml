@@ -179,52 +179,52 @@
             Status dokumenta
             </summary>
         </member>
-        <member name="T:Dokument.Entities.StatusDokumentaEnum">
+        <member name="T:Dokument.Entities.StatusDokumenta">
             <summary>
             Entitet status dokumenta koji je predstavljen enumeratorom
             </summary>
         </member>
-        <member name="F:Dokument.Entities.StatusDokumentaEnum.Usvojen">
+        <member name="F:Dokument.Entities.StatusDokumenta.Usvojen">
             <summary>
             Status dokumenta usvojen
             </summary>
         </member>
-        <member name="F:Dokument.Entities.StatusDokumentaEnum.Odbijen">
+        <member name="F:Dokument.Entities.StatusDokumenta.Odbijen">
             <summary>
             Status dokumenta odbijen
             </summary>
         </member>
-        <member name="F:Dokument.Entities.StatusDokumentaEnum.Otvoren">
+        <member name="F:Dokument.Entities.StatusDokumenta.Otvoren">
             <summary>
             Status dokumenta otvoren
             </summary>
         </member>
-        <member name="T:Dokument.Entities.TipGarancijeEnum">
+        <member name="T:Dokument.Entities.TipGarancije">
             <summary>
             Entitet tip garancije koji je predstavljen enumeratorom
             </summary>
         </member>
-        <member name="F:Dokument.Entities.TipGarancijeEnum.Jemstvo">
+        <member name="F:Dokument.Entities.TipGarancije.Jemstvo">
             <summary>
             Tip garancije Jemstvo
             </summary>
         </member>
-        <member name="F:Dokument.Entities.TipGarancijeEnum.Bankarska_garancija">
+        <member name="F:Dokument.Entities.TipGarancije.Bankarska_garancija">
             <summary>
             Tip garancije Bankarska garancija
             </summary>
         </member>
-        <member name="F:Dokument.Entities.TipGarancijeEnum.Garancija_nekretninom">
+        <member name="F:Dokument.Entities.TipGarancije.Garancija_nekretninom">
             <summary>
             Tip garancije Garancija nekretnina
             </summary>
         </member>
-        <member name="F:Dokument.Entities.TipGarancijeEnum.Zirantska">
+        <member name="F:Dokument.Entities.TipGarancije.Zirantska">
             <summary>
             Tip garancije Zirantska
             </summary>
         </member>
-        <member name="F:Dokument.Entities.TipGarancijeEnum.Uplata_gotovinom">
+        <member name="F:Dokument.Entities.TipGarancije.Uplata_gotovinom">
             <summary>
             Tip garancije Uplata gotovinom
             </summary>
@@ -397,6 +397,11 @@
         <member name="P:Dokument.Models.Dokument.DokumentDTOCreate.VerzijaDokumentaID">
             <summary>
             Identifikaciona oznaka verzije dokumenta
+            </summary>
+        </member>
+        <member name="T:Dokument.Models.Dokument.DokumentDTOUpdate">
+            <summary>
+            Predstavlja model dokumenta za izmenu
             </summary>
         </member>
         <member name="P:Dokument.Models.Dokument.DokumentDTOUpdate.DokumentID">

@@ -3,7 +3,7 @@
     /// <summary>
     /// Entitet tip garancije koji je predstavljen enumeratorom
     /// </summary>
-    public enum TipGarancijeEnum
+    public enum TipGarancije
     {
         /// <summary>
         /// Tip garancije Jemstvo

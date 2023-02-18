@@ -5,7 +5,7 @@ namespace Korisnici.Entities
     /// <summary>
     /// Entitet Tip korisnika koji je predstavljen enumeratorom
     /// </summary>
-    public enum TipKorisnikaEnum
+    public enum TipKorisnika
     {
         /// <summary>
         /// Tip korisnika operater

@@ -86,47 +86,47 @@
             Tip kojem korisnik moze pripadati
             </summary>
         </member>
-        <member name="T:Korisnici.Entities.TipKorisnikaEnum">
+        <member name="T:Korisnici.Entities.TipKorisnika">
             <summary>
             Entitet Tip korisnika koji je predstavljen enumeratorom
             </summary>
         </member>
-        <member name="F:Korisnici.Entities.TipKorisnikaEnum.Operater">
+        <member name="F:Korisnici.Entities.TipKorisnika.Operater">
             <summary>
             Tip korisnika operater
             </summary>
         </member>
-        <member name="F:Korisnici.Entities.TipKorisnikaEnum.Tehnicki_sekretar">
+        <member name="F:Korisnici.Entities.TipKorisnika.Tehnicki_sekretar">
             <summary>
             Tip korisnika tehnicki sekretar
             </summary>
         </member>
-        <member name="F:Korisnici.Entities.TipKorisnikaEnum.Prva_komisija">
+        <member name="F:Korisnici.Entities.TipKorisnika.Prva_komisija">
             <summary>
             Tip korisnika prva komisija
             </summary>
         </member>
-        <member name="F:Korisnici.Entities.TipKorisnikaEnum.Superuser">
+        <member name="F:Korisnici.Entities.TipKorisnika.Superuser">
             <summary>
             Tip korisnika superuser
             </summary>
         </member>
-        <member name="F:Korisnici.Entities.TipKorisnikaEnum.Operater_nadmetanja">
+        <member name="F:Korisnici.Entities.TipKorisnika.Operater_nadmetanja">
             <summary>
             Tip korisnika operater nadmetanja
             </summary>
         </member>
-        <member name="F:Korisnici.Entities.TipKorisnikaEnum.Licitatnt">
+        <member name="F:Korisnici.Entities.TipKorisnika.Licitatnt">
             <summary>
             Tip korisnika licitant
             </summary>
         </member>
-        <member name="F:Korisnici.Entities.TipKorisnikaEnum.Menadzer">
+        <member name="F:Korisnici.Entities.TipKorisnika.Menadzer">
             <summary>
             Tip korisnika menadzer
             </summary>
         </member>
-        <member name="F:Korisnici.Entities.TipKorisnikaEnum.Administrator">
+        <member name="F:Korisnici.Entities.TipKorisnika.Administrator">
             <summary>
             Tip korisnika administrator
             </summary>
