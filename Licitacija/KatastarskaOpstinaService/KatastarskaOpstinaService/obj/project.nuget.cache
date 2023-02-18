@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "n3Epq47W73g5trwEYNh3BIFiEhkRqYvaIpi9TJJFezpvhkIywvSeNoD0KvOU8QoE8OqBbTzz004xyO4yKhYKwQ==",
+  "dgSpecHash": "uHWoK3gTzDiSmlWju3PJUbS5GOUPETjvURoleUh9OfLnnbf19HqjiJhgBwlHmcxv4WLZ3UmWvO1KfqD6lZ9fXQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\AnaMarija LAP\\Desktop\\uris3\\Tim-4---Nix---NewDevProject\\Licitacija\\KatastarskaOpstinaService\\KatastarskaOpstinaService\\KatastarskaOpstinaService.csproj",
+  "projectFilePath": "C:\\Users\\AnaMarija LAP\\Desktop\\uris glavni trenutno\\Tim-4---Nix---NewDevProject\\Licitacija\\KatastarskaOpstinaService\\KatastarskaOpstinaService\\KatastarskaOpstinaService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\AnaMarija LAP\\.nuget\\packages\\automapper\\10.1.0\\automapper.10.1.0.nupkg.sha512",
     "C:\\Users\\AnaMarija LAP\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.0\\automapper.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",
