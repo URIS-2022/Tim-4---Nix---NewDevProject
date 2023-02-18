@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace Licitacija1.DTOs
 {
+    /// <summary>
+    /// Klasa LicitacijaCreateDTO
+    /// </summary>
     public class LicitacijaCreateDTO
     {
 
-        /// <summary>
-        /// Identifikator licitacije
-        /// </summary>
+ 
         [Required(ErrorMessage = "Obavezan broj licitacije")]
         /// <summary>
         /// broj licitacije

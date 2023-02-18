@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Licitacija1.DTOs
 {
+    /// <summary>
+    /// klasa DokumentUpdateDTO
+    /// </summary>
     public class DokumentUpdateDTO
     {
         /// <summary>

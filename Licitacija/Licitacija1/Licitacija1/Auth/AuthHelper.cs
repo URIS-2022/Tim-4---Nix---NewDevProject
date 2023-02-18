@@ -8,6 +8,10 @@ namespace Licitacija1.Auth
     {
         private readonly IConfiguration _configuration;
 
+        /// <summary>
+        /// konstruktor
+        /// </summary>
+        /// <param name="configuration"></param>
         public AuthHelper(IConfiguration configuration)
         {
             _configuration = configuration;

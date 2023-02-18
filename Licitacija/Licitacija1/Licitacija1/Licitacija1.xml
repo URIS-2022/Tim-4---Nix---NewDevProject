@@ -4,6 +4,12 @@
         <name>Licitacija1</name>
     </assembly>
     <members>
+        <member name="M:Licitacija1.Auth.AuthHelper.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            konstruktor
+            </summary>
+            <param name="configuration"></param>
+        </member>
         <member name="M:Licitacija1.Auth.AuthHelper.Authorize(System.String)">
             <summary>
             Metoda za proveru prava pristupa
@@ -182,9 +188,31 @@
              --param  'licitacijaID = a0045e28-fe2c-443c-6855-08db110df141'\
             </remarks>
         </member>
+        <member name="T:Licitacija1.Data.AppDbContext">
+            <summary>
+            klasa AppDbContext
+            </summary>
+        </member>
+        <member name="M:Licitacija1.Data.AppDbContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{Licitacija1.Data.AppDbContext})">
+            <summary>
+            konstruktor AppDbContext        
+            /// </summary>
+            <param name="opt"></param>
+        </member>
+        <member name="M:Licitacija1.Data.AppDbContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            
+            </summary>
+            <param name="modelBuilder"></param>
+        </member>
         <member name="M:Licitacija1.Data.PreparationDB.SeedData(Licitacija1.Data.AppDbContext)">
             <summary>
             Filling the database with data
+            </summary>
+        </member>
+        <member name="T:Licitacija1.DTOs.DokumentCreateDTO">
+            <summary>
+            Klasa DokumentCreateDTO
             </summary>
         </member>
         <member name="P:Licitacija1.DTOs.DokumentCreateDTO.licitacijaId">
@@ -210,6 +238,11 @@
         <member name="P:Licitacija1.DTOs.DokumentCreateDTO.vrstaPodnosiocaDokumenta">
             P pravno lice, F fizicko lice
         </member>
+        <member name="T:Licitacija1.DTOs.DokumentDTO">
+            <summary>
+            Klasa DokumentDTO
+            </summary>
+        </member>
         <member name="P:Licitacija1.DTOs.DokumentDTO.dokumentID">
             <summary>
             Identifikator dokumenta
@@ -233,6 +266,11 @@
              datum
             </summary>
         </member>
+        <member name="T:Licitacija1.DTOs.DokumentUpdateDTO">
+            <summary>
+            klasa DokumentUpdateDTO
+            </summary>
+        </member>
         <member name="P:Licitacija1.DTOs.DokumentUpdateDTO.dokumentId">
             <summary>
             Identifikator dokumenta
@@ -254,6 +292,11 @@
         <member name="P:Licitacija1.DTOs.DokumentUpdateDTO.datum">
             <summary>
              datum
+            </summary>
+        </member>
+        <member name="T:Licitacija1.DTOs.JavnoNadmetanjeDTO">
+            <summary>
+            Klasa JavnoNadmetanjeDTO
             </summary>
         </member>
         <member name="P:Licitacija1.DTOs.JavnoNadmetanjeDTO.JavnoNadmetanjeId">
@@ -311,6 +354,11 @@
             Krug javnog nadmetanja 
             </summary>
         </member>
+        <member name="T:Licitacija1.DTOs.LicitacijaConfirmationDTO">
+            <summary>
+            Klasa LicitacijaConfirmationDTO
+            </summary>
+        </member>
         <member name="P:Licitacija1.DTOs.LicitacijaConfirmationDTO.brojLicitacije">
             <summary>
             broj licitacije
@@ -341,9 +389,14 @@
             rok za dostavu licitacije
             </summary>
         </member>
-        <member name="P:Licitacija1.DTOs.LicitacijaCreateDTO.brojLicitacije">
+        <member name="T:Licitacija1.DTOs.LicitacijaCreateDTO">
             <summary>
-            Identifikator licitacije
+            Klasa LicitacijaCreateDTO
+            </summary>
+        </member>
+        <member name="T:Licitacija1.DTOs.LicitacijaDTO">
+            <summary>
+            klasa LicitacijaDTO
             </summary>
         </member>
         <member name="P:Licitacija1.DTOs.LicitacijaDTO.LicitacijaID">
@@ -379,6 +432,11 @@
         <member name="P:Licitacija1.DTOs.LicitacijaDTO.rokZaDostavuPrijava">
             <summary>
             Rok za dostavljanje dokumenata za prijavu
+            </summary>
+        </member>
+        <member name="T:Licitacija1.DTOs.LicitacijaUpdateDTO">
+            <summary>
+            klasa LicitacijaUpdateDTO
             </summary>
         </member>
         <member name="P:Licitacija1.Entities.DokumentModel.datum">

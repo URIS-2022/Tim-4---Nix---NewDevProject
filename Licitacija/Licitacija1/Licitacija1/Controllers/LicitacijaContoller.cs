@@ -76,12 +76,12 @@ namespace Licitacija1.Controllers
         ///     --param  'ID = dace9578-f369-4490-adbd-08db10e87c12'
         /// </remarks>
         [AllowAnonymous]
-        [HttpGet("{ID}", Name="GetLicitacijaByID")]
-        public ActionResult<LicitacijaDTO> GetLicitacijaByID(Guid ID)
+        [HttpGet("{licitacijaID}", Name="GetLicitacijaByID")]
+        public ActionResult<LicitacijaDTO> GetLicitacijaByID(Guid licitacijaID)
         {
             Console.WriteLine("Getting licitacije...");
 
-            var licitatcijaItem = licitacija.GetLicitacijaByID(ID);
+            var licitatcijaItem = licitacija.GetLicitacijaByID(licitacijaID);
 
             if (licitatcijaItem != null)
             {
@@ -127,7 +127,7 @@ namespace Licitacija1.Controllers
 
                 var licitacijaDTO = _mapper.Map<LicitacijaDTO>(licitacijaModel);
 
-                return CreatedAtRoute(nameof(GetLicitacijaByID), new { ID = licitacijaDTO.LicitacijaID }, licitacijaDTO);
+                return CreatedAtRoute(nameof(GetLicitacijaByID), new { licitacijaID = licitacijaDTO.LicitacijaID }, licitacijaDTO);
             }
             catch (Exception)
             {

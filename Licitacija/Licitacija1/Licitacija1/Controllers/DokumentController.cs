@@ -61,13 +61,13 @@ namespace Licitacija1.Controllers
         /// GET 'https://localhost:4001/api/dokumenti/' \
         ///     --param  'ID = 4f7c7ecd-49e7-4c39-8840-273954346524'
         /// </remarks>
-        [HttpGet("{ID}", Name="GetDokumentByID")]
+        [HttpGet("{dokumentID}", Name="GetDokumentByID")]
         [AllowAnonymous]
-        public ActionResult<DokumentDTO> GetDokumentByID(Guid ID)
+        public ActionResult<DokumentDTO> GetDokumentByID(Guid dokumentID)
         {
            
 
-            var dokument = _dokumentRepo.GetDokumentByID(ID);
+            var dokument = _dokumentRepo.GetDokumentByID(dokumentID);
 
             if (dokument != null)
             {
@@ -87,12 +87,12 @@ namespace Licitacija1.Controllers
         ///     --param  'ID = 3c5a441b-2ed4-4012-8377-6660b1994895'
         /// </remarks>
 
-        [HttpGet("/{ID}", Name = "GetDokumentByLicitacijaID")]
-        public ActionResult<List<DokumentDTO>> GetDokumentByLicitacijaID(Guid ID)
+        [HttpGet("/{dokumentID}", Name = "GetDokumentByLicitacijaID")]
+        public ActionResult<List<DokumentDTO>> GetDokumentByLicitacijaID(Guid dokumentID)
         {
 
 
-            var dokument = _dokumentRepo.GetDokumentByLicitacijaID(ID);
+            var dokument = _dokumentRepo.GetDokumentByLicitacijaID(dokumentID);
 
             return Ok(_mapper.Map<List<DokumentDTO>>(dokument));
         }
@@ -131,7 +131,7 @@ namespace Licitacija1.Controllers
 
                 var dokumentDTO = _mapper.Map<DokumentDTO>(dokument);
 
-                return CreatedAtRoute(nameof(GetDokumentByID), new { ID = dokumentDTO.dokumentID }, dokumentDTO);
+                return CreatedAtRoute(nameof(GetDokumentByID), new { dokumentID = dokumentDTO.dokumentID }, dokumentDTO);
             }
             catch (Exception)
             {
