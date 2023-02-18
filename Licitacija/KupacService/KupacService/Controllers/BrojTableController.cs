@@ -84,6 +84,7 @@ namespace KupacService.Controllers
         /// Kreira novi broj table.
         /// </summary>
         /// <param name="tablaItem">Model broja table</param>
+        /// <param name="key"></param>
         /// <returns>Potvrdu o kreiranom broju table.</returns>
         /// <remarks>
         /// Primer zahteva za kreiranje novog broja table \

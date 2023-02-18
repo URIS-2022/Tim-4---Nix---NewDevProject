@@ -48,7 +48,7 @@ namespace KupacService.Data.Repositories
             var BrojTable = _context.BrojeviTabla.Find(brojTableID);
             if (BrojTable == null)
             {
-                throw new ArgumentException($"Broj table {BrojTable.Broj} nije pronađen.");
+                throw new ArgumentException($"Broj table nije pronađen.");
             }
 
             _context.BrojeviTabla.Remove(BrojTable);

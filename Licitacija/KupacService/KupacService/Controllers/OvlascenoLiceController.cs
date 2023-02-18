@@ -27,7 +27,7 @@ namespace KupacService.Controllers
         /// </summary>
         /// <param name="ovlascenoLiceRepository"></param>
         /// <param name="mapper"></param>
-        /// <param name="authHelper"
+        /// <param name="authHelper"></param>
         public OvlascenoLiceController(IOvlascenoLiceRepository ovlascenoLiceRepository, IMapper mapper, IAuthHelper authHelper)
         {
             _repository = ovlascenoLiceRepository;
