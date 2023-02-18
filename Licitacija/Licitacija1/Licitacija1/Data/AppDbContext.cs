@@ -7,9 +7,16 @@ using Licitacija1.Entities;
 
 namespace Licitacija1.Data
 {
+    /// <summary>
+    /// klasa AppDbContext
+    /// </summary>
     public class AppDbContext : DbContext
     {
-       public AppDbContext(DbContextOptions<AppDbContext> opt) : base (opt)
+        /// <summary>
+        /// konstruktor AppDbContext        
+        /// /// </summary>
+        /// <param name="opt"></param>
+        public AppDbContext(DbContextOptions<AppDbContext> opt) : base (opt)
         {
 
         }
@@ -17,10 +24,14 @@ namespace Licitacija1.Data
         public DbSet<LicitacijaModel> Licitacije { get; set; }
         public DbSet<DokumentModel> Dokumenti { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="modelBuilder"></param>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
-            //modelBuilder.Entity<LicitacijaModel>().HasMany(x => x.dokumentFizickaLica).WithOne(x => x.licitacija).HasForeignKey(x => x.licitacijaID);
+           
 
         }
     }

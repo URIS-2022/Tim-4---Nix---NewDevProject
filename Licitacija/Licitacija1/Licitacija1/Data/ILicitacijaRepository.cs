@@ -11,12 +11,12 @@ namespace Licitacija1.Data
         bool SaveChanges();
         List<LicitacijaModel> GetLicitacije();
 
-        LicitacijaModel GetLicitacijaByID(Guid LicitacijaID);
+        LicitacijaModel GetLicitacijaByID(Guid licitacijaID);
 
         void CreateLicitacija(LicitacijaModel licitacija);
 
         void UpdateLicitacija(LicitacijaModel licitacija);
 
-        void DeleteLicitacija(Guid LicitacijaID);
+        void DeleteLicitacija(Guid licitacijaID);
     }
 }

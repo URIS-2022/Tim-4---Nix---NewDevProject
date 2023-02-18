@@ -413,7 +413,7 @@
       "DownstreamPathTemplate": "/api/DeoParcele"
     },
     {
-      "UpstreamPathTemplate": "/api/licitacije/{ID}",
+      "UpstreamPathTemplate": "/api/licitacije/{licitacijaID}",
       "UpstreamHttpMethod": [ "Get", "Delete" ],
 
       "DownstreamScheme": "https",
@@ -423,7 +423,7 @@
           "Port": 4001
         }
       ],
-      "DownstreamPathTemplate": "/api/licitacije/{ID}"
+      "DownstreamPathTemplate": "/api/licitacije/{licitacijaID}"
     },
 //Dokumenti Api
     {
@@ -440,7 +440,7 @@
       "DownstreamPathTemplate": "/api/dokumenti"
     },
     {
-      "UpstreamPathTemplate": "/api/dokumenti/{ID}",
+      "UpstreamPathTemplate": "/api/dokumenti/{dokumentID}",
       "UpstreamHttpMethod": [ "Get", "Delete" ],
 
       "DownstreamScheme": "https",
@@ -450,7 +450,7 @@
           "Port": 4001
         }
       ],
-      "DownstreamPathTemplate": "/api/dokumenti/{ID}"
+      "DownstreamPathTemplate": "/api/dokumenti/{dokumentID}"
     },
 //Javno nadmetanje Api
     {

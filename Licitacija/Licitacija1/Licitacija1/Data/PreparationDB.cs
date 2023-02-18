@@ -38,7 +38,6 @@ namespace Licitacija1.Data
             
             if (!context.Licitacije.Any())
             {
-                var dokumentiMock = context.Dokumenti;
 
                 Console.WriteLine("Seeding Data...");
                 context.Licitacije.AddRange(new LicitacijaModel()

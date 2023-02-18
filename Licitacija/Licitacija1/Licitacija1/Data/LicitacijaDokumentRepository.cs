@@ -25,9 +25,9 @@ namespace Licitacija1.Data
             _context.Dokumenti.Add(licitacijaDokument);
         }
 
-        public void Delete(Guid ID)
+        public void Delete(Guid dokumentID)
         {
-            var dokumentITEM = GetDokumentByID(ID);
+            var dokumentITEM = GetDokumentByID(dokumentID);
             if (dokumentITEM != null)
             {
                 _context.Remove(dokumentITEM);
@@ -39,9 +39,9 @@ namespace Licitacija1.Data
             return _context.Dokumenti.ToList();
         }
 
-        public DokumentModel GetDokumentByID( Guid ID)
+        public DokumentModel GetDokumentByID( Guid dokumentID)
         {
-            return _context.Dokumenti.FirstOrDefault(p => p.dokumentID == ID);
+            return _context.Dokumenti.FirstOrDefault(p => p.dokumentID == dokumentID);
         }
 
 
