@@ -26,24 +26,41 @@ using System.Threading.Tasks;
 
 namespace JavnoNadmetanje
 {
+    /// <summary>
+    /// Osnovna klasa u kojoj se nalaze sve potrebe konfiguracije i klasa koja se pokrece pri bildu
+    /// </summary>
     public class Startup
     {
+        /// <summary>
+        /// instanca od predefinisanog sistemskog interfejsa
+        /// </summary>
         public IConfiguration Configuration { get; }
+        /// <summary>
+        /// odnosi se na komunikaciju sa web-om
+        /// </summary>
         private readonly IWebHostEnvironment _env;
 
+        /// <summary>
+        /// Deklaracija Startup klase
+        /// </summary>
+        /// <param name="configuration"></param> naznacava interfejs Configruation
+        /// <param name="env"></param> komunicira sa web host-om
         public Startup(IConfiguration configuration, IWebHostEnvironment env)
         {
             Configuration = configuration;
             _env = env;
         }
 
+        /// <summary>
+        /// void funkcija u kojoj konfigurisemo sta sve nas servis radi
+        /// </summary>
+        /// <param name="services"></param> naznaka za servis
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
 
             Console.WriteLine(" Using SQL DB");
             services.AddDbContext<JavnoNadmetanjeContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("JavnoNadmetanjeConnection")));
-
 
             //Console.WriteLine(" Using IN MEM DB");
             //services.AddDbContext<JavnoNadmetanjeContext>(opt => opt.UseInMemoryDatabase("InMem"));
@@ -59,30 +76,34 @@ namespace JavnoNadmetanje
                 {
                     Title = "Javno Nadmetanje API",
                     Version = "1",
-                    //Description = "Pomoæu ovog API-ja mogu da se vrše sve CRUD operacije u okviru agregata Javno Nadmetanje.",
-                    //Contact = new OpenApiContact
-                    //{
-                    //    Name = "Sofija Dangubic",
-                    //    Email = "sofijadangubic8@gmail.com",
-                    //    Url = new Uri(Configuration["Links:FTN"])
-                    //},
-                    //License = new OpenApiLicense
-                    //{
-                    //    Name = "FTN licence",
-                    //    Url = new Uri(Configuration["Links:FTN"])
-                    //},
-                    //TermsOfService = new Uri(Configuration["Links:TermsOfService"])
+                    Description = "Pomoæu ovog API-ja mogu da se vrše sve CRUD operacije u okviru agregata Javno Nadmetanje.",
+                    Contact = new Microsoft.OpenApi.Models.OpenApiContact
+                    {
+                        Name = "Sofija Dangubic",
+                        Email = "sofijadangubic8@gmail.com",
+                        Url = new Uri(Configuration["Links:FTN"])
+                    },
+                    License = new Microsoft.OpenApi.Models.OpenApiLicense
+                    {
+                        Name = "FTN licence",
+                        Url = new Uri(Configuration["Links:FTN"])
+                    },
+                    TermsOfService = new Uri(Configuration["Links:TermsOfService"])
                 });
 
+                //definisanje dokumentacije 
                 var xmlComments = $"{ Assembly.GetExecutingAssembly().GetName().Name }.xml";
-
                 var xmlCommentsPath = Path.Combine(AppContext.BaseDirectory, xmlComments);
-
                 setupAction.IncludeXmlComments(xmlCommentsPath);
             });
 
         }
 
+        /// <summary>
+        /// druga funkcija koja je zaduzena za konfiguraciju
+        /// </summary>
+        /// <param name="app"></param>
+        /// <param name="env"></param>
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {

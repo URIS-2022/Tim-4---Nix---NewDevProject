@@ -3,8 +3,13 @@ using System;
 
 namespace JavnoNadmetanje.Dtos
 {
+    /// <summary>
+    /// klasa javnog nadmetanja kojom iscitavamo sve podatke koje zelimo
+    /// </summary>
     public class JavnoNadmetanjeReadDto
     {
+        #pragma warning disable CS1591 //nepotreban XML koment
+
         //isto kao model samo bez key i required anotacija
 
         //primarni kljuc
@@ -33,6 +38,7 @@ namespace JavnoNadmetanje.Dtos
         public int PrijavljeniKupci { get; set; }
         //public Guid LicitantID { get; set; }
         //public Guid ParcelaID { get; set; }
-  
+
+        #pragma warning restore CS1591 //nepotreban XML koment
     }
 }

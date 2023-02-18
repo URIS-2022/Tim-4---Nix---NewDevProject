@@ -10,8 +10,15 @@ using System.Threading.Tasks;
 
 namespace JavnoNadmetanje.Data
 {
+    /// <summary>
+    /// klasa kojom punim tabelu sa 2 nasumicno definisana primera
+    /// </summary>
     public class PrepDB
     {
+        /// <summary>
+        /// poziva SeadData() funkciju
+        /// </summary>
+        /// <param name="app"></param>
         public static void PrepPopulation(IApplicationBuilder app)
         {
             using (var serviceScope = app.ApplicationServices.CreateScope())
@@ -20,6 +27,10 @@ namespace JavnoNadmetanje.Data
             }
         }
 
+        /// <summary>
+        /// funkcija gde definisemo ta 2 primera
+        /// </summary>
+        /// <param name="context"></param>
         private static void SeedData(JavnoNadmetanjeContext context)
         {
             Console.WriteLine("Applying migrations");

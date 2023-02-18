@@ -4,8 +4,13 @@ using System.ComponentModel.DataAnnotations;
 
 namespace JavnoNadmetanje.Dtos
 {
+    /// <summary>
+    /// klasa javnog nadmetanja koju koristimo za kreiranje novog javnog nadmetanja
+    /// </summary>
     public class JavnoNadmetanjeCreateDto
     {
+        #pragma warning disable CS1591 //nepotreban XML koment
+
         //isto kao model samo bez ID-a 
 
         [Required]
@@ -34,15 +39,18 @@ namespace JavnoNadmetanje.Dtos
         public StatusJavnogNadmetanja Status { get; set; }
         [Required]
         public KatastarskeOpstine KatastarskaOpstina { get; set; }
-        [Required]
+        //[Required]
         //public Guid KupacID { get; set; }
         //[Required]
         //public Guid AdresaID { get; set; }
-        //[Required]
+        [Required]
         public int PrijavljeniKupci { get; set; }
         //[Required]
         //public Guid LicitantID { get; set; }
         //[Required]
         //public Guid ParcelaID { get; set; }
+
+        #pragma warning restore CS1591 //nepotreban XML koment
+
     }
 }

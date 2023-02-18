@@ -7,8 +7,7 @@ namespace JavnoNadmetanje.Auth
 {
     public interface IAuthHelper
     {
-
-            public bool Authorize(string key);
+        public bool Authorize(string key);
         
     }
 }

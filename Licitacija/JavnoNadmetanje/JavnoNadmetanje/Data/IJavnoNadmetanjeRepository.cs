@@ -4,11 +4,15 @@ using System.Collections.Generic;
 
 namespace JavnoNadmetanje.Data
 {
+    /// <summary>
+    /// intefejs javnog nadmetanja
+    /// </summary>
     public interface IJavnoNadmetanjeRepository
-    { 
+    {
+        #pragma warning disable CS1591 //nepotreban XML koment posto sve objasnili u JavnoNadmetanjeRepository
+
         bool SaveChanges();
-        
-        //ispisi sva javna nadmetanja
+
         List<JavnoNadmetanjeModel> GetAllJavnaNadmetanja();
 
         //ispisi ono jn sa prosledjenim id-jem
@@ -22,5 +26,7 @@ namespace JavnoNadmetanje.Data
 
         //obrisi javno nadmetanje
         void DeleteJavnoNadmetanje(Guid javnoNadmetanjeID);
+
+        #pragma warning restore CS1591 //nepotreban XML koment
     }
 }
