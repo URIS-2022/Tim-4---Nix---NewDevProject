@@ -214,5 +214,64 @@
   ],
   "GlobalConfiguration": {
     "BaseUrl": "http://localhost:5555"
-  }
+  },
+  //Zalba api
+	{
+	    "UpstreamPathTemplate": "/api/",
+	    "UpstreamHttpMethod": [ "Get", "Post", "Put"],
+	
+
+	    "DownstreamScheme": "http",
+	    "DownstreamHostAndPorts": [
+	        {
+	          "Host": "localhost",
+	          "Port": 5008
+	        }
+	      ],
+	      "DownstreamPathTemplate": "/api/zalbe"
+	    },
+	    {
+	      "UpstreamPathTemplate": "/api/zalbe/{zalbaId}",
+	      "UpstreamHttpMethod": [ "Get", "Delete" ],
+	
+
+	      "DownstreamScheme": "http",
+	      "DownstreamHostAndPorts": [
+	        {
+	          "Host": "localhost",
+	          "Port": 5000
+	        }
+	      ],
+	      "DownstreamPathTemplate": "/api/zalbe/{zalbaId}"
+	  },
+//Uplata api
+	    {
+	      "UpstreamPathTemplate": "/api/",
+	      "UpstreamHttpMethod": [ "Get", "Post", "Put"],
+	
+
+	      "DownstreamScheme": "http",
+	      "DownstreamHostAndPorts": [
+	        {
+	          "Host": "localhost",
+	          "Port": 5006
+	        }
+	      ],
+	      "DownstreamPathTemplate": "/api/uplate"
+	    },
+	    {
+	      "UpstreamPathTemplate": "/api/uplate/{uplataId}",
+	      "UpstreamHttpMethod": [ "Get", "Delete" ],
+	
+
+	      "DownstreamScheme": "http",
+	      "DownstreamHostAndPorts": [
+	        {
+	          "Host": "localhost",
+	          "Port": 5006
+	        }
+	      ],
+	      "DownstreamPathTemplate": "/api/uplate/{uplataId}"
+	    }
+
 }
