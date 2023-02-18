@@ -326,6 +326,32 @@
         }
       ],
       "DownstreamPathTemplate": "/api/dokumenti/{ID}"
-    }
+    },
+//Javno nadmetanje Api
+    {
+      "UpstreamPathTemplate": "/api/javnoNadmetanje",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Options" ],
 
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5002
+        }
+      ],
+      "DownstreamPathTemplate": "/api/javnoNadmetanje"
+    },
+    {
+      "UpstreamPathTemplate": "/api/javnoNadmetanje/{javnoNadmetanjeID}",
+      "UpstreamHttpMethod": [ "Get", "Delete" ],
+
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5002
+        }
+      ],
+      "DownstreamPathTemplate": "/api/javnoNadmetanje/{javnoNadmetanjeID}"
+    }
 }
