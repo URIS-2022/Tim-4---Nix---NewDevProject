@@ -30,6 +30,14 @@ namespace KatastarskaOpstinaService.Controllers
             _authHelper = authHelper;
         }
 
+        /// <summary>
+        /// Vraca sve statute opstina
+        /// </summary>
+        /// <returns>Lista statuta opstina</returns>
+        /// <response code= "200">Vraca listu statuta opstina</response>
+        /// <response code= "204">Ne postoji nijedan statut opstine</response>
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         [HttpGet]
         [HttpHead]
         [AllowAnonymous]
@@ -42,6 +50,15 @@ namespace KatastarskaOpstinaService.Controllers
             return Ok(_mapper.Map<IEnumerable<StatutOpstineDto>>(statutOpstineItems));  
         }
 
+        /// <summary>
+        /// Vraca statut opstine po ID-u
+        /// </summary>
+        /// <param name="statutOpstineId">ID statuta opstine</param>
+        /// <returns>Odgovarajuci statut opstine</returns>
+        /// <response code= "200">Vraca trazeni statut opstine</response>
+        /// <response code= "204">Nije pronadjen trazeni statut opstine</response>
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         [HttpGet("{statutOpstineId}", Name = "GetStatutById")]
         [AllowAnonymous]
         public ActionResult<StatutOpstineDto> GetStatutById(Guid statutOpstineId)
