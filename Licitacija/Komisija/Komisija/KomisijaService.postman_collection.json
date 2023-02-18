@@ -1,0 +1,406 @@
+{
+	"info": {
+		"_postman_id": "235d0885-1ddb-4061-8098-cb1e6232821d",
+		"name": "KomisijaService",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21801258"
+	},
+	"item": [
+		{
+			"name": "GetKomisija",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5004/api/Komisija",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5004",
+					"path": [
+						"api",
+						"Komisija"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GetKomisija",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5007/api/Komisija",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5007",
+							"path": [
+								"api",
+								"Komisija"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 18 Feb 2023 13:43:42 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"komisijaId\": \"22fa4b7d-3eca-43c6-9903-6eea5a0ae10b\",\n        \"nazivKomisije\": \"Prva komisija\",\n        \"oznakaKomisije\": \"kom123ef\",\n        \"predsednikKomisije\": null,\n        \"clanoviKomisije\": []\n    },\n    {\n        \"komisijaId\": \"c009d177-1815-49d8-acdb-b60bccc403ca\",\n        \"nazivKomisije\": \"Nova komisija\",\n        \"oznakaKomisije\": \"kom345ef\",\n        \"predsednikKomisije\": null,\n        \"clanoviKomisije\": []\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "GetById",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "GetById",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Andrijana",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nazivKomisije\": \"Druga komisija\",\r\n  \"oznakaKomisije\": \"kom745ef\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5007/api/Komisija/%7B22fa4b7d-3eca-43c6-9903-6eea5a0ae10b%7D?id=%7B22fa4b7d-3eca-43c6-9903-6eea5a0ae10b%7D",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5007",
+							"path": [
+								"api",
+								"Komisija",
+								"%7B22fa4b7d-3eca-43c6-9903-6eea5a0ae10b%7D"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "%7B22fa4b7d-3eca-43c6-9903-6eea5a0ae10b%7D"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 18 Feb 2023 13:37:56 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"komisijaId\": \"22fa4b7d-3eca-43c6-9903-6eea5a0ae10b\",\n    \"nazivKomisije\": \"Prva komisija\",\n    \"oznakaKomisije\": \"kom123ef\",\n    \"predsednikKomisije\": null,\n    \"clanoviKomisije\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "CreateKomisija",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "Delete",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5007/api/Komisija/481e1176-854d-4972-671e-08db11c4d27b",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5007",
+							"path": [
+								"api",
+								"Komisija",
+								"481e1176-854d-4972-671e-08db11c4d27b"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 18 Feb 2023 15:44:31 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "GetLicnostiKomisije",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "GetLicnostiKomisije",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5007/api/LicnostKomisije",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5007",
+							"path": [
+								"api",
+								"LicnostKomisije"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 18 Feb 2023 15:48:11 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"licnostKomisijeId\": \"48c9bd59-8c21-4b6e-9f6c-325c39ae0e93\",\n        \"imeLicnostiKomisije\": \"Marko\",\n        \"prezimeLicnostiKomisije\": \"Stojanovic\",\n        \"funkcijaLicnostiKomisije\": \"Pomocnik\",\n        \"kontaktLicnostiKomisije\": \"0645371333\",\n        \"datumRodjenjaLicnostiKomisije\": \"1999-01-02T00:00:00\",\n        \"komisijaId\": \"22fa4b7d-3eca-43c6-9903-6eea5a0ae10b\",\n        \"oznakaKomisije\": \"kom123ef\"\n    },\n    {\n        \"licnostKomisijeId\": \"c96e40b0-9cfd-405b-9a41-452b90cb4bdf\",\n        \"imeLicnostiKomisije\": \"Mina\",\n        \"prezimeLicnostiKomisije\": \"Zlatic\",\n        \"funkcijaLicnostiKomisije\": \"Predsednik\",\n        \"kontaktLicnostiKomisije\": \"0651516733\",\n        \"datumRodjenjaLicnostiKomisije\": \"1971-09-01T00:00:00\",\n        \"komisijaId\": \"c009d177-1815-49d8-acdb-b60bccc403ca\",\n        \"oznakaKomisije\": \"kom345ef\"\n    },\n    {\n        \"licnostKomisijeId\": \"4640c814-c340-4a9d-8d27-77f0b7f45602\",\n        \"imeLicnostiKomisije\": \"Petar\",\n        \"prezimeLicnostiKomisije\": \"Petrovic\",\n        \"funkcijaLicnostiKomisije\": \"Obican clan\",\n        \"kontaktLicnostiKomisije\": \"0672514739\",\n        \"datumRodjenjaLicnostiKomisije\": \"1976-01-19T00:00:00\",\n        \"komisijaId\": \"c009d177-1815-49d8-acdb-b60bccc403ca\",\n        \"oznakaKomisije\": \"kom345ef\"\n    },\n    {\n        \"licnostKomisijeId\": \"d4c1205f-5b9f-472f-8838-86f99fdbba1e\",\n        \"imeLicnostiKomisije\": \"Sonja\",\n        \"prezimeLicnostiKomisije\": \"Stojanovic\",\n        \"funkcijaLicnostiKomisije\": \"Prva postava\",\n        \"kontaktLicnostiKomisije\": \"0617825713\",\n        \"datumRodjenjaLicnostiKomisije\": \"1989-09-18T00:00:00\",\n        \"komisijaId\": \"22fa4b7d-3eca-43c6-9903-6eea5a0ae10b\",\n        \"oznakaKomisije\": \"kom123ef\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "GetByIdLK",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "GetByIdLK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5007/api/LicnostKomisije/48c9bd59-8c21-4b6e-9f6c-325c39ae0e93",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5007",
+							"path": [
+								"api",
+								"LicnostKomisije",
+								"48c9bd59-8c21-4b6e-9f6c-325c39ae0e93"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 18 Feb 2023 15:49:06 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"licnostKomisijeId\": \"48c9bd59-8c21-4b6e-9f6c-325c39ae0e93\",\n    \"imeLicnostiKomisije\": \"Marko\",\n    \"prezimeLicnostiKomisije\": \"Stojanovic\",\n    \"funkcijaLicnostiKomisije\": \"Pomocnik\",\n    \"kontaktLicnostiKomisije\": \"0645371333\",\n    \"datumRodjenjaLicnostiKomisije\": \"1999-01-02T00:00:00\",\n    \"komisijaId\": \"22fa4b7d-3eca-43c6-9903-6eea5a0ae10b\",\n    \"oznakaKomisije\": \"kom123ef\"\n}"
+				}
+			]
+		},
+		{
+			"name": "PostLK",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "PostLK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"imeLicnostiKomisije\": \"Ana\",\r\n    \"prezimeLicnostiKomisije\": \"Matic\",\r\n    \"funkcijaLicnostiKomisije\": \"Pomocnik\",\r\n    \"kontaktLicnostiKomisije\": \"0691122649\",\r\n    \"datumRodjenjaLicnostiKomisije\": \"1998-01-02T00:00:00\",\r\n    \"komisijaId\": \"22fa4b7d-3eca-43c6-9903-6eea5a0ae10b\",\r\n    \"oznakaKomisije\": \"kom123ef\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5007/api/LicnostKomisije",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5007",
+							"path": [
+								"api",
+								"LicnostKomisije"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 18 Feb 2023 15:51:06 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "System.InvalidOperationException: No route matches the supplied values.\r\n   at Microsoft.AspNetCore.Mvc.CreatedAtRouteResult.OnFormatting(ActionContext context)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsyncCore(ActionContext context, ObjectResult result, Type objectType, Object value)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsync(ActionContext context, ObjectResult result)\r\n   at Microsoft.AspNetCore.Mvc.ObjectResult.ExecuteResultAsync(ActionContext context)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultAsync(IActionResult result)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()\r\n--- End of stack trace from previous location ---\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()\r\n--- End of stack trace from previous location ---\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()\r\n--- End of stack trace from previous location ---\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)\r\n   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)\r\n   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)\r\n   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)\r\n   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)\r\n   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)\r\n\r\nHEADERS\r\n=======\r\nConnection: keep-alive\r\nContent-Type: application/json\r\nAccept: */*\r\nAccept-Encoding: gzip, deflate, br\r\nAuthorization: Bearer Andrijana\r\nHost: localhost:5007\r\nUser-Agent: PostmanRuntime/7.31.0\r\nContent-Length: 325\r\nPostman-Token: 4b4baf07-482d-40b9-88e6-64a2b0327a77\r\n"
+				}
+			]
+		},
+		{
+			"name": "DeleteLK",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "DeleteLK",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5007/api/LicnostKomisije/fb3e1f80-db66-4b56-d76a-08db11c7f200",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5007",
+							"path": [
+								"api",
+								"LicnostKomisije",
+								"fb3e1f80-db66-4b56-d76a-08db11c7f200"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 18 Feb 2023 15:54:33 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}

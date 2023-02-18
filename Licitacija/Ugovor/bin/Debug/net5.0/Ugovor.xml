@@ -1,0 +1,336 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Ugovor</name>
+    </assembly>
+    <members>
+        <member name="M:Ugovor.Controllers.UgovorController.GetAll">
+            <summary>
+            Vraća sve ugovore
+            </summary>
+            <returns>Lista ugovora</returns>
+            <response code = "200">Vraća listu ugovora</response>
+            <response code = "204">Ne postoji nijedan ugovor</response>
+        </member>
+        <member name="M:Ugovor.Controllers.UgovorController.GetById(System.Guid)">
+            <summary>
+            Vraća ugovor po ID-ju
+            </summary>
+            <param name="ugovorId">ID ugovora</param>
+            <returns>Odgovarajući ugovor</returns>
+            <response code = "200">Vraća traženi ugovor</response>
+            <response code = "404">Nije pronađen traženi ugovor</response>
+        </member>
+        <member name="M:Ugovor.Controllers.UgovorController.Create(Ugovor.Dtos.UgovorCreateDto,System.String)">
+            <summary>
+            Kreiranje novog ugovora
+            </summary>
+            <param name="ugovor">Model ugovora</param>
+            <param name="key"> ključ sa kojim se proverava autorizacija(key vrednost: Bearer Jovana123)</param>
+            <returns>Potvrdu o kreiranju ugovora</returns>
+            <response code = "201">Vraća kreirani ugovor</response>
+            <response code="401">Lice koje želi da izvrši kreiranje ugovora nije autorizovani korisnik</response>
+            <response code = "500">Došlo je do greške na serveru prilikom kreiranja ugovora</response>
+        </member>
+        <member name="M:Ugovor.Controllers.UgovorController.Update(Ugovor.Dtos.UgovorUpdateDto,System.String)">
+            <summary>
+            Ažuriranje ugovora
+            </summary>
+            <param name="ugovor">Model ugovora</param>
+            <param name="key"> ključ sa kojim se proverava autorizacija(key vrednost: Bearer Jovana123)</param>
+            <returns>Potvrdu o izmenama u ugovoru</returns>
+            <response code="200">Vraća ažurirani ugovor</response>
+            <response code="401">Lice koje želi da izvrši ažuriranje nije autorizovani korisnik</response>
+            <response code="404">Nije pronađen ugovor za ažuriranje</response>
+            <response code="500">Došlo je do greške na serveru prilikom ažuriranja ugovora</response>
+        </member>
+        <member name="M:Ugovor.Controllers.UgovorController.Delete(System.Guid,System.String)">
+            <summary>
+            Brisanje ugovora
+            </summary>
+            <param name="ugovorId">Id ugovora</param>
+             <param name="key"> ključ sa kojim se proverava autorizacija(key vrednost: Bearer Jovana123)</param>
+            <returns>Status 204 (NoContent)</returns>
+            <response code="204">Ugovor uspešno obrisan</response>
+            <response code="401">Lice koje želi da izvrši brisanje nije autorizovani korisnik</response>
+            <response code="404">Nije pronađen ugovor za brisanje</response>
+            <response code="500">Došlo je do greške na serveru prilikom brisanja ugovora</response>
+        </member>
+        <member name="M:Ugovor.Controllers.UgovorController.GetUgovorOptions">
+            <summary>
+            Vraća opcije za rad ugovorima
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Ugovor.Dtos.LiceDto.KupacId">
+            <summary>
+            Id lica- kupca
+            </summary>
+        </member>
+        <member name="P:Ugovor.Dtos.LiceDto.OstvarenaPovrsina">
+            <summary>
+            Ostvarena povrsina
+            </summary>
+        </member>
+        <member name="P:Ugovor.Dtos.LiceDto.ImaZabranu">
+            <summary>
+            Da li ima zabranu
+            </summary>
+        </member>
+        <member name="P:Ugovor.Dtos.LicitacijaDto.brojLicitacije">
+            <summary>
+            Broj licitacije
+            </summary>
+        </member>
+        <member name="P:Ugovor.Dtos.LicitacijaDto.goidna">
+            <summary>
+            Godina licitacije
+            </summary>
+        </member>
+        <member name="P:Ugovor.Dtos.LicitacijaDto.datumLicitacije">
+            <summary>
+            Datum licitacije
+            </summary>
+        </member>
+        <member name="P:Ugovor.Dtos.LicitacijaDto.ogranicenjeLicitacije">
+            <summary>
+            Ogranicenje licitacije
+            </summary>
+        </member>
+        <member name="P:Ugovor.Dtos.LicitacijaDto.korakCene">
+            <summary>
+            Korak cene
+            </summary>
+        </member>
+        <member name="P:Ugovor.Dtos.LicitacijaDto.rokZaDostavuPrijava">
+            <summary>
+            Rok za dostavu prijava
+            </summary>
+        </member>
+        <member name="P:Ugovor.Dtos.UgovorConfirmationDto.UgovorId">
+            <summary>
+            ID ugovora
+            </summary>
+        </member>
+        <member name="P:Ugovor.Dtos.UgovorConfirmationDto.LiceId">
+            <summary>
+            ID kupca
+            </summary>
+        </member>
+        <member name="P:Ugovor.Dtos.UgovorCreateDto.LicitacijaId">
+            <summary>
+            ID licitacije
+            </summary>
+        </member>
+        <member name="P:Ugovor.Dtos.UgovorCreateDto.TipGarancije">
+            <summary>
+            Tip garancije
+            </summary>
+        </member>
+        <member name="P:Ugovor.Dtos.UgovorCreateDto.LiceId">
+            <summary>
+            ID kupca
+            </summary>
+        </member>
+        <member name="P:Ugovor.Dtos.UgovorCreateDto.RokDospeca">
+            <summary>
+            Rok dospeća
+            </summary>
+        </member>
+        <member name="P:Ugovor.Dtos.UgovorCreateDto.ZavodniBroj">
+            <summary>
+            Zavodni broj
+            </summary>
+        </member>
+        <member name="P:Ugovor.Dtos.UgovorCreateDto.DatumZavodjenja">
+            <summary>
+            Datum zavođenja
+            </summary>
+        </member>
+        <member name="P:Ugovor.Dtos.UgovorCreateDto.RokZaVracanjeZemljista">
+            <summary>
+            Rok za vraćanje zemljišta
+            </summary>
+        </member>
+        <member name="P:Ugovor.Dtos.UgovorCreateDto.MestoPotpisivanja">
+            <summary>
+            Mesto potpisivanja
+            </summary>
+        </member>
+        <member name="P:Ugovor.Dtos.UgovorCreateDto.DatumPotpisa">
+            <summary>
+            Datum potpisa
+            </summary>
+        </member>
+        <member name="P:Ugovor.Dtos.UgovorDto.UgovorId">
+            <summary>
+            ID ugovora
+            </summary>
+        </member>
+        <member name="P:Ugovor.Dtos.UgovorDto.LicitacijaId">
+            <summary>
+            ID licitacije
+            </summary>
+        </member>
+        <member name="P:Ugovor.Dtos.UgovorDto.Licitacija">
+            <summary>
+            Model licitacije
+            </summary>
+        </member>
+        <member name="P:Ugovor.Dtos.UgovorDto.TipGarancije">
+            <summary>
+            Tip garancije
+            </summary>
+        </member>
+        <member name="P:Ugovor.Dtos.UgovorDto.LiceId">
+            <summary>
+            ID kupca
+            </summary>
+        </member>
+        <member name="P:Ugovor.Dtos.UgovorDto.Lice">
+            <summary>
+            Model kupca
+            </summary>
+        </member>
+        <member name="P:Ugovor.Dtos.UgovorDto.RokDospeca">
+            <summary>
+            Rok dospeća
+            </summary>
+        </member>
+        <member name="P:Ugovor.Dtos.UgovorDto.ZavodniBroj">
+            <summary>
+            Zavodni broj
+            </summary>
+        </member>
+        <member name="P:Ugovor.Dtos.UgovorDto.DatumZavodjenja">
+            <summary>
+            Datum zavođenja
+            </summary>
+        </member>
+        <member name="P:Ugovor.Dtos.UgovorDto.RokZaVracanjeZemljista">
+            <summary>
+            Rok za vraćanje zemljišta
+            </summary>
+        </member>
+        <member name="P:Ugovor.Dtos.UgovorDto.MestoPotpisivanja">
+            <summary>
+            Mesto potpisivanja
+            </summary>
+        </member>
+        <member name="P:Ugovor.Dtos.UgovorDto.DatumPotpisa">
+            <summary>
+            Datum potpisa
+            </summary>
+        </member>
+        <member name="P:Ugovor.Dtos.UgovorUpdateDto.UgovorId">
+            <summary>
+            ID ugovora
+            </summary>
+        </member>
+        <member name="P:Ugovor.Dtos.UgovorUpdateDto.LicitacijaId">
+            <summary>
+            ID licitacije
+            </summary>
+        </member>
+        <member name="P:Ugovor.Dtos.UgovorUpdateDto.TipGarancije">
+            <summary>
+            Tip garancije
+            </summary>
+        </member>
+        <member name="P:Ugovor.Dtos.UgovorUpdateDto.LiceId">
+            <summary>
+            ID kupca
+            </summary>
+        </member>
+        <member name="P:Ugovor.Dtos.UgovorUpdateDto.RokDospeca">
+            <summary>
+            Rok dospeća
+            </summary>
+        </member>
+        <member name="P:Ugovor.Dtos.UgovorUpdateDto.ZavodniBroj">
+            <summary>
+            Zavodni broj
+            </summary>
+        </member>
+        <member name="P:Ugovor.Dtos.UgovorUpdateDto.DatumZavodjenja">
+            <summary>
+            Datum zavođenja
+            </summary>
+        </member>
+        <member name="P:Ugovor.Dtos.UgovorUpdateDto.RokZaVracanjeZemljista">
+            <summary>
+            Rok za vraćanje zemljišta
+            </summary>
+        </member>
+        <member name="P:Ugovor.Dtos.UgovorUpdateDto.MestoPotpisivanja">
+            <summary>
+            Mesto potpisivanja
+            </summary>
+        </member>
+        <member name="P:Ugovor.Dtos.UgovorUpdateDto.DatumPotpisa">
+            <summary>
+            Datum potpisa
+            </summary>
+        </member>
+        <member name="P:Ugovor.Models.UgovorModel.UgovorId">
+            <summary>
+            ID ugovora
+            </summary>
+        </member>
+        <member name="P:Ugovor.Models.UgovorModel.LicitacijaId">
+            <summary>
+            ID licitacije
+            </summary>
+        </member>
+        <member name="P:Ugovor.Models.UgovorModel.Licitacija">
+            <summary>
+            Model licitacije
+            </summary>
+        </member>
+        <member name="P:Ugovor.Models.UgovorModel.TipGarancije">
+            <summary>
+            TIp garancije
+            </summary>
+        </member>
+        <member name="P:Ugovor.Models.UgovorModel.LiceId">
+            <summary>
+            ID kupca
+            </summary>
+        </member>
+        <member name="P:Ugovor.Models.UgovorModel.Lice">
+            <summary>
+            Model kupca
+            </summary>
+        </member>
+        <member name="P:Ugovor.Models.UgovorModel.RokDospeca">
+            <summary>
+            Rok dospeća
+            </summary>
+        </member>
+        <member name="P:Ugovor.Models.UgovorModel.ZavodniBroj">
+            <summary>
+            Zavodni broj
+            </summary>
+        </member>
+        <member name="P:Ugovor.Models.UgovorModel.DatumZavodjenja">
+            <summary>
+            Datum zavođenja
+            </summary>
+        </member>
+        <member name="P:Ugovor.Models.UgovorModel.RokZaVracanjeZemljista">
+            <summary>
+            Rok za vraćanje zemljišta
+            </summary>
+        </member>
+        <member name="P:Ugovor.Models.UgovorModel.MestoPotpisivanja">
+            <summary>
+            Mesto potpisivanja
+            </summary>
+        </member>
+        <member name="P:Ugovor.Models.UgovorModel.DatumPotpisa">
+            <summary>
+            Datum potpisa
+            </summary>
+        </member>
+    </members>
+</doc>
