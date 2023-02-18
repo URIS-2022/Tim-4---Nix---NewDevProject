@@ -43,8 +43,7 @@ namespace ZalbaService.Entities
 
         [NotMapped]
         public Guid KupacID { get; set; }
-        //[ForeignKey("KupacID")] 
-        //public Kupac Kupac { get; set; }
+
 
 
         /// <summary>

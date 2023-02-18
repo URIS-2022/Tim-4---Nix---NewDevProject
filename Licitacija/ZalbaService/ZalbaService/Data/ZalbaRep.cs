@@ -51,7 +51,7 @@ namespace ZalbaService.Data
 
         public void UpdateZalba(Zalba zalba)
         {
-
+            //nije neophodna implementacija metode
         }
     }
 }
