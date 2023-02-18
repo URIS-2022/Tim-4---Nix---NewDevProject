@@ -210,6 +210,131 @@
       ],
       "UpstreamPathTemplate": "/api/statutOpstine/{statutOpstineId}",
       "UpstreamHttpMethod": [ "Get", "Delete" ]
+    },
+    //kupac service api
+    {
+      "DownstreamPathTemplate": "/api/kupci",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7000
+        }
+      ],
+      "UpstreamPathTemplate": "/api/kupci",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Options" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/kupci/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7000
+        }
+      ],
+      "UpstreamPathTemplate": "/api/kupci/{id}",
+      "UpstreamHttpMethod": [ "Get", "Delete" ]
+    },
+    //broj table lice api
+    {
+      "DownstreamPathTemplate": "/api/brojTable",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7000
+        }
+      ],
+      "UpstreamPathTemplate": "/api/brojTable",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Options" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/brojTable/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7000
+        }
+      ],
+      "UpstreamPathTemplate": "/api/brojTable/{id}",
+      "UpstreamHttpMethod": [ "Get", "Delete" ]
+    },
+    //kontakt osobe service api
+    {
+      "DownstreamPathTemplate": "/api/kontaktOsobe",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7000
+        }
+      ],
+      "UpstreamPathTemplate": "/api/kontaktOsobe",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Options" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/kontaktOsobe/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7000
+        }
+      ],
+      "UpstreamPathTemplate": "/api/kontaktOsobe/{id}",
+      "UpstreamHttpMethod": [ "Get", "Delete" ]
+    },
+    //ovlascena lica service api
+    {
+      "DownstreamPathTemplate": "/api/ovlascenaLica",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7000
+        }
+      ],
+      "UpstreamPathTemplate": "/api/ovlascenaLica",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Options" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/ovlascenaLica/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7000
+        }
+      ],
+      "UpstreamPathTemplate": "/api/ovlascenaLica/{id}",
+      "UpstreamHttpMethod": [ "Get", "Delete" ]
+    },
+    //prioriteti service api
+    {
+      "DownstreamPathTemplate": "/api/prioriteti",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7000
+        }
+      ],
+      "UpstreamPathTemplate": "/api/prioriteti",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Options" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/prioriteti/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7000
+        }
+      ],
+      "UpstreamPathTemplate": "/api/prioriteti/{id}",
+      "UpstreamHttpMethod": [ "Get", "Delete" ]
     }
   ],
   "GlobalConfiguration": {
