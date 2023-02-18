@@ -272,6 +272,60 @@
 	        }
 	      ],
 	      "DownstreamPathTemplate": "/api/uplate/{uplataId}"
-	    }
+	    },
+//Lictacije Api
+    {
+      "UpstreamPathTemplate": "/api/licitacije",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put" ],
+
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 4001
+        }
+      ],
+      "DownstreamPathTemplate": "/api/DeoParcele"
+    },
+    {
+      "UpstreamPathTemplate": "/api/licitacije/{ID}",
+      "UpstreamHttpMethod": [ "Get", "Delete" ],
+
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 4001
+        }
+      ],
+      "DownstreamPathTemplate": "/api/licitacije/{ID}"
+    },
+//Dokumenti Api
+    {
+      "UpstreamPathTemplate": "/api/dokumenti",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put" ],
+
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 4001
+        }
+      ],
+      "DownstreamPathTemplate": "/api/dokumenti"
+    },
+    {
+      "UpstreamPathTemplate": "/api/dokumenti/{ID}",
+      "UpstreamHttpMethod": [ "Get", "Delete" ],
+
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 4001
+        }
+      ],
+      "DownstreamPathTemplate": "/api/dokumenti/{ID}"
+    }
 
 }
