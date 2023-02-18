@@ -4,6 +4,7 @@
     <TargetFramework>net5.0</TargetFramework>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <DocumentationFile>KupacService.xml</DocumentationFile>
+    <UserSecretsId>ef59d3e3-e1c7-4a3b-841c-ac32c50cf6e5</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

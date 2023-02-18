@@ -38,6 +38,7 @@
              Kreira novi broj table.
              </summary>
              <param name="tablaItem">Model broja table</param>
+             <param name="key"></param>
              <returns>Potvrdu o kreiranom broju table.</returns>
              <remarks>
              Primer zahteva za kreiranje novog broja table \
@@ -220,7 +221,14 @@
             Kontroler koji omoćuava CRUD operacije za Ovlašćeno lice
             </summary>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:KupacService.Controllers.OvlascenoLiceController.#ctor(KupacService.Data.Interfaces.IOvlascenoLiceRepository,AutoMapper.IMapper,KupacService.Helpers.IAuthHelper)" -->
+        <member name="M:KupacService.Controllers.OvlascenoLiceController.#ctor(KupacService.Data.Interfaces.IOvlascenoLiceRepository,AutoMapper.IMapper,KupacService.Helpers.IAuthHelper)">
+            <summary>
+            Injektovanje potrebnih komponenti. 
+            </summary>
+            <param name="ovlascenoLiceRepository"></param>
+            <param name="mapper"></param>
+            <param name="authHelper"></param>
+        </member>
         <member name="M:KupacService.Controllers.OvlascenoLiceController.GetOvlascenaLica">
             <summary>
             Vraća sva ovlašćena lica.
