@@ -19,6 +19,8 @@ using Microsoft.AspNetCore.Http;
 using KupacService.Helpers;
 using System.IO;
 using System.Reflection;
+using KupacService.ServiceCall;
+using KupacService.ServiceCalls;
 
 namespace KupacService
 {
@@ -58,6 +60,7 @@ namespace KupacService
             services.AddScoped<IOvlascenoLiceRepository, OvlascenoLiceRepository>();
             services.AddScoped<IPrioritetRepository, PrioritetRepository>();
 
+            services.AddScoped<IUplataService, UplataService>();
             services.AddScoped<IAuthHelper, AuthHelper>();
             services.AddControllers();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());

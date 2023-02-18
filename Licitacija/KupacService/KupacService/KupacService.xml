@@ -2628,6 +2628,36 @@
             <param name="args"></param>
             <returns></returns>
         </member>
+        <member name="T:KupacService.ServiceCall.IUplataService">
+            <summary>
+            Interfejs za komunikaciju sa servisom Uplata
+            </summary>
+        </member>
+        <member name="M:KupacService.ServiceCall.IUplataService.GetUplateByKupacID(System.Guid)">
+            <summary>
+            Potpis metode
+            </summary>
+            <param name="kupacID"></param>
+            <returns></returns>
+        </member>
+        <member name="T:KupacService.ServiceCalls.UplataService">
+            <summary>
+            Servis za komunikaciju sa Uplatom
+            </summary>
+        </member>
+        <member name="M:KupacService.ServiceCalls.UplataService.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:KupacService.ServiceCalls.UplataService.GetUplateByKupacID(System.Guid)">
+            <summary>
+            Get metoda za uplate
+            </summary>
+            <param name="kupacId"></param>
+            <returns></returns>
+        </member>
         <member name="T:KupacService.Startup">
             <summary>
             StartUp class
