@@ -211,7 +211,7 @@
       "UpstreamPathTemplate": "/api/statutOpstine/{statutOpstineId}",
       "UpstreamHttpMethod": [ "Get", "Delete" ]
     }
-  ],
+  zzz],
   "GlobalConfiguration": {
     "BaseUrl": "http://localhost:5555"
   }
